@@ -2,7 +2,7 @@
 
 namespace Restaurant.Models
 {
-    public class RestaurantEntity : DbContext
+    public class RestaurantContext : DbContext
     {
         public DbSet<Customer> Customers { get; set; }
 
@@ -12,7 +12,9 @@ namespace Restaurant.Models
 
         public DbSet<Category> Categories { get; set; }
 
-        public RestaurantEntity(DbContextOptions options) : base(options)
+        public DbSet<OrderItems> OrderItems { get; set; }
+
+        public RestaurantContext(DbContextOptions options) : base(options)
         {
             
         }

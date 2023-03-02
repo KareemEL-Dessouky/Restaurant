@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Restaurant.Models;
+using Restaurant.Repositories;
 
 namespace Restaurant
 {
@@ -12,9 +13,15 @@ namespace Restaurant
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
-            builder.Services.AddDbContext<RestaurantEntity>(
+            builder.Services.AddDbContext<RestaurantContext>(
                 options => options.UseSqlServer(builder.Configuration.GetConnectionString("Cs"))
                 );
+
+            builder.Services.AddScoped<IGenericRepository<Product>, ProductRepository>();
+            builder.Services.AddScoped<IGenericRepository<Customer>, CustomerRepository>();
+            builder.Services.AddScoped<IGenericRepository<Category>, CategoryRepository>();
+            builder.Services.AddScoped<IGenericRepository<Order>, OrderRepository>();
+            builder.Services.AddScoped<IGenericRepository<OrderItems>, OrderItemsRepository>();
 
             var app = builder.Build();
 
