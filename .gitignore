@@ -1,0 +1,58 @@
+# vscode configs
+.vs/
+
+# logging related
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+
+# debugging related
+[Dd]ebugPS/
+[Rr]eleasePS/
+dlldata.c
+
+artifacts/
+
+*_i.c
+*_p.c
+*_i.h
+*.ilk
+*.meta
+*.obj
+*.pch
+*.pdb
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.tlb
+*.tli
+*.tlh
+*.tmp
+*.tmp_proj
+*.log
+*.vspscc
+*.vssscc
+.builds
+*.pidb
+*.svclog
+*.scc
+
+# cache files
+ipch/
+*.aps
+*.ncb
+*.opendb
+*.opensdf
+*.sdf
+*.cachefile
+
+# Visual Studio profiler
+*.psess
+*.vsp
+*.vspx
+*.sap
+
+# SQL Server files
+*.mdf
+*.ldf
