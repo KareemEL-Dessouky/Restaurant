@@ -1,6 +1,5 @@
 using Microsoft.EntityFrameworkCore;
 
-using Restaurant.Helper;
 using Restaurant.Models;
 using Restaurant.Repositories;
 
@@ -26,15 +25,7 @@ namespace Restaurant
             builder.Services.AddScoped<IGenericRepository<OrderItems>, OrderItemsRepository>();
 
             // configure and inject automapper
-
-            var config = new AutoMapper.MapperConfiguration(config =>
-            {
-                config.AddProfile(new AutomapperProfile());
-
-            });
-            var mapper = config.CreateMapper();
-
-            builder.Services.AddSingleton(mapper);
+            builder.Services.AddAutoMapper(typeof(Program));
 
             var app = builder.Build();
 
