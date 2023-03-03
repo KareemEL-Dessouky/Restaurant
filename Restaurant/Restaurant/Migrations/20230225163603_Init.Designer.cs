@@ -11,7 +11,7 @@ using Restaurant.Models;
 
 namespace Restaurant.Migrations
 {
-    [DbContext(typeof(RestaurantEntity))]
+    [DbContext(typeof(RestaurantContext))]
     [Migration("20230225163603_Init")]
     partial class Init
     {

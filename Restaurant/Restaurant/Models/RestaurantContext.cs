@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
+using Restaurant.Data;
+
 namespace Restaurant.Models
 {
     public class RestaurantContext : DbContext
@@ -16,13 +18,16 @@ namespace Restaurant.Models
 
         public RestaurantContext(DbContextOptions options) : base(options)
         {
-            
+
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<OrderItems>()
                 .HasKey(k => new { k.OrderID, k.ProductID });
+
+            // seed dummy data
+            modelBuilder.Seed();
         }
     }
 }
