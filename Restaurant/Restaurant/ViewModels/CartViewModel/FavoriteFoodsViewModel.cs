@@ -1,5 +1,5 @@
 ﻿namespace Restaurant.ViewModels.CartViewModel;
-
+// needs a column
 public class FavoriteItemsViewModel
 {
     public int Id { get; set; }

@@ -1,5 +1,6 @@
-﻿using Restaurant.Models;
-using System.Linq.Expressions;
+﻿using System.Linq.Expressions;
+
+using Restaurant.Models;
 
 namespace Restaurant.Repositories
 {
@@ -32,7 +33,7 @@ namespace Restaurant.Repositories
 
         public void Edit(OrderItems orderItem)
         {
-            OrderItems ExistingOrderItem = GetByID(orderItem.ID);
+            //OrderItems ExistingOrderItem = GetByID(orderItem.ID);
 
             // Use auto-mapper
             // ViewModel reference = ExistingOrderItems

@@ -1,5 +1,6 @@
-﻿using Restaurant.Models;
-using System.Linq.Expressions;
+﻿using System.Linq.Expressions;
+
+using Restaurant.Models;
 
 namespace Restaurant.Repositories
 {
@@ -20,6 +21,11 @@ namespace Restaurant.Repositories
         public Order GetByID(int id)
         {
             return context.CustomerOrders.FirstOrDefault(p => p.ID == id);
+        }
+
+        public IEnumerable<Order> GetAllOrdersByCustomerId(int id)
+        {
+            return context.CustomerOrders.Where(o => o.CustomerID == id).ToList();
         }
 
         public void Delete(int id)
