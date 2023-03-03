@@ -7,11 +7,13 @@ namespace Restaurant.Helper;
 
 public class AutomapperProfile : Profile
 {
-	public AutomapperProfile()
-	{
-		CreateMap<Category, CategoryViewModel>();
-		CreateMap<Category, CategoryNameEditViewModel>();
-		CreateMap<Category, CategoryNameDetailViewModel>();
-		CreateMap<Category, CategoryNameDeleteViewModel>(); CreateMap<CategoryNameCreateViewModel, Category>();
-	}
+    public AutomapperProfile()
+    {
+        CreateMap<Category, CategoryViewModel>();
+        CreateMap<Category, CategoryNameEditViewModel>();
+        CreateMap<Category, CategoryNameDetailViewModel>();
+        CreateMap<Category, CategoryNameDeleteViewModel>();
+        CreateMap<CategoryNameCreateViewModel, Category>();
+
+    }
 }
