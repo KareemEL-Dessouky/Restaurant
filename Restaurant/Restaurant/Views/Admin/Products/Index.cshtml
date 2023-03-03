@@ -1,0 +1,33 @@
+﻿@using Restaurant.ViewModels.ProductViewModel;
+@{
+    ViewData["Title"] = "Admin Products Page";
+}
+@model IEnumerable<ProductViewModel>;
+
+<h2>Products for Admins</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.ID</td>
+                <td>@product.Title</td>
+                <td>@product.Price</td>
+                <td>
+                    <a asp-page="Edit" asp-route-id="@product.ID">Edit</a>
+                    <a asp-page="Delete" asp-route-id="@product.ID">Delete</a>
+                    <a asp-page="Details" asp-route-id="@product.ID">View Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
