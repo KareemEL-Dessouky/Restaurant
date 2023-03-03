@@ -1,10 +1,8 @@
 ﻿using AutoMapper;
-
 using Microsoft.AspNetCore.Mvc;
-
 using Restaurant.Models;
 using Restaurant.Repositories;
-using Restaurant.ViewModels;
+using Restaurant.ViewModels.CategoryViewModel;
 
 namespace Restaurant.Controllers;
 
@@ -65,10 +63,10 @@ public class CategoriesController : Controller
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public IActionResult Edit(int id)
+    public IActionResult Edit(CategoryNameEditViewModel vm)
     {
-        var category = _category.GetByID(id);
-        var mappedCategore = _mapper.Map<CategoryNameDetailViewModel>(category);
+        //var category = _category.GetByID(id);
+        //var mappedCategore = _mapper.Map<CategoryNameDetailViewModel>(category);
 
         // TODO: should it be similar to delete action expected an id params, or view model
 

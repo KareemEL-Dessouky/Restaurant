@@ -6,7 +6,7 @@ namespace Restaurant.Models
     {
         public int ID { get; set; }
 
-        public int TotalPrice { get; set; }
+        public decimal TotalPrice { get; set; }
 
         public DateTime? PlacedAt { get; set; }
 

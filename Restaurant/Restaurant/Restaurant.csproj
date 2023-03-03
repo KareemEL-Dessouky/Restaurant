@@ -7,11 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Views\Categories\Index.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Include="Views\Categories\Index.cshtml" />
+    <Compile Remove="Views\Categories\**" />
+    <Content Remove="Views\Categories\**" />
+    <EmbeddedResource Remove="Views\Categories\**" />
+    <None Remove="Views\Categories\**" />
   </ItemGroup>
 
   <ItemGroup>

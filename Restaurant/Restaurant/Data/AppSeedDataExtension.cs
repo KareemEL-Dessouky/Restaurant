@@ -11,68 +11,65 @@ public static class AppSeedDataExtension
     {
         modelBuilder.Entity<Product>().HasData(
 
-                   new Product
-                   {
-                       ID = 1,
-                       CategoryID = 1,
-                       Title = "Product 1",
-                       Price = 20
-                   },
-                        new Product
-                        {
-                            ID = 2,
-                            CategoryID = 1,
-                            Title = "Product 2",
-                            Price = 50
-                        },
-                        new Product
-                        {
-                            ID = 3,
-                            CategoryID = 2,
-                            Title = "Product 3",
-                            Price = 88
-                        },
-                        new Product
-                        {
-                            ID = 4,
-                            CategoryID = 2,
-                            Title = "Product 4",
-                            Price = 32
-                        },
-                        new Product
-                        {
-                            ID = 5,
-                            CategoryID = 3,
-                            Title = "Product 5",
-                            Price = 59
-                        },
-                        new Product
-                        {
-                            ID = 6,
-                            CategoryID = 3,
-                            Title = "Product 6",
-                            Price = 200
-                        }
-            );
+            new Product
+            {
+                ID = 1,
+                CategoryID = 1,
+                Title = "Product 1",
+                Price = 20
+            },
+            new Product
+            {
+                ID = 2,
+                CategoryID = 1,
+                Title = "Product 2",
+                Price = 50
+            },
+            new Product
+            {
+                ID = 3,
+                CategoryID = 2,
+                Title = "Product 3",
+                Price = 88
+            },
+            new Product
+            {
+                ID = 4,
+                CategoryID = 2,
+                Title = "Product 4",
+                Price = 32
+            },
+            new Product
+            {
+                ID = 5,
+                CategoryID = 3,
+                Title = "Product 5",
+                Price = 59
+            },
+            new Product
+            {
+                ID = 6,
+                CategoryID = 3,
+                Title = "Product 6",
+                Price = 200
+            });
 
         modelBuilder.Entity<Category>().HasData(
-                   new Category
-                   {
-                       Name = "Category 1",
-                       ID = 1
-                   },
-                        new Category
-                        {
-                            Name = "Category 2",
-                            ID = 2
-                        },
-                        new Category
-                        {
-                            Name = "Category 3",
-                            ID = 3
-                        });
-
-
+            new Category
+            {
+                Name = "Category 1",
+                ID = 1
+            },
+            new Category
+            {
+                Name = "Category 2",
+                ID = 2
+            },
+            new Category
+            {
+                Name = "Category 3",
+                ID = 3
+            });
 
         modelBuilder.Entity<Customer>().HasData(
         new Customer
@@ -97,68 +94,67 @@ public static class AppSeedDataExtension
             Phone = "2348719749",
             Address = "some address",
             Password = "super secret",
-        }
-    );
+        });
 
         modelBuilder.Entity<Order>().HasData(
-    new Order
-    {
-        ID = 1,
-        TotalPrice = 800,
-        PlacedAt = new DateTime(2020, 4, 1),
-        CustomerID = 1,
-        Notes = "some notes about the order"
-    },
-    new Order
-    {
-        ID = 2,
-        TotalPrice = 500,
-        PlacedAt = new DateTime(2023, 1, 31),
-        CustomerID = 2,
-        Notes = "the order needs some salts"
-    },
-     new Order
-     {
-         ID = 3,
-         TotalPrice = 500,
-         PlacedAt = new DateTime(2023, 1, 31),
-         CustomerID = 2,
-         Notes = "the order needs some salts"
-     },
-      new Order
-      {
-          ID = 4,
-          TotalPrice = 500,
-          PlacedAt = new DateTime(2023, 1, 31),
-          CustomerID = 2,
-          Notes = "the order needs some salts"
-      },
-       new Order
-       {
-           ID = 5,
-           TotalPrice = 500,
-           PlacedAt = new DateTime(2023, 1, 31),
-           CustomerID = 2,
-           Notes = "the order needs some salts"
-       },
-        new Order
-        {
-            ID = 6,
-            TotalPrice = 500,
-            PlacedAt = new DateTime(2023, 1, 31),
-            CustomerID = 2,
-            Notes = "the order needs some salts"
-        }
-);
+            new Order
+            {
+                ID = 1,
+                TotalPrice = 800,
+                PlacedAt = new DateTime(2020, 4, 1),
+                CustomerID = 1,
+                Notes = "some notes about the order"
+            },
+            new Order
+            {
+                ID = 2,
+                TotalPrice = 500,
+                PlacedAt = new DateTime(2023, 1, 31),
+                CustomerID = 2,
+                Notes = "the order needs some salts"
+            },
+            new Order
+            {
+                ID = 3,
+                TotalPrice = 500,
+                PlacedAt = new DateTime(2023, 1, 31),
+                CustomerID = 2,
+                Notes = "the order needs some salts"
+            },
+            new Order
+            {
+                ID = 4,
+                TotalPrice = 500,
+                PlacedAt = new DateTime(2023, 1, 31),
+                CustomerID = 2,
+                Notes = "the order needs some salts"
+            },
+            new Order
+            {
+                ID = 5,
+                TotalPrice = 500,
+                PlacedAt = new DateTime(2023, 1, 31),
+                CustomerID = 2,
+                Notes = "the order needs some salts"
+            },
+
+            new Order
+            {
+                ID = 6,
+                TotalPrice = 500,
+                PlacedAt = new DateTime(2023, 1, 31),
+                CustomerID = 2,
+                Notes = "the order needs some salts"
+            });
 
         modelBuilder.Entity<OrderItems>().HasData(
-          new OrderItems
-          {
-              OrderID = 1,
-              ProductID = 1,
-              Price = 42,
-              Quantity = 2
-          },
+            new OrderItems
+            {
+                OrderID = 1,
+                ProductID = 1,
+                Price = 42,
+                Quantity = 2
+            },
             new OrderItems
             {
                 OrderID = 2,
@@ -193,7 +189,6 @@ public static class AppSeedDataExtension
                 ProductID = 3,
                 Price = 88,
                 Quantity = 3
-            }
-);
+            });
     }
 }

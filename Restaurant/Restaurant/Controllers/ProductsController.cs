@@ -14,18 +14,18 @@ namespace Restaurant.Controllers
         // TODO: refactor for category list items (name, value)
         private readonly IGenericRepository<Category> _categoryModel;
 
-        private readonly IGenericRepository<ProductRepository> _product;
+        private readonly IGenericRepository<Product> _product;
         private IMapper _mapper;
 
         // upload img
         private readonly FileUploader _fileUpload;
         private readonly IWebHostEnvironment _webHostEnvironment;
-        public ProductsController(IGenericRepository<ProductRepository> product, IMapper mapper, IGenericRepository<Category> category, FileUploader fileUpload, IWebHostEnvironment webHostEnvironment)
+        public ProductsController(IGenericRepository<Product> product, IMapper mapper, IGenericRepository<Category> category, /*FileUploader fileUpload,*/ IWebHostEnvironment webHostEnvironment)
         {
             _product = product;
             _mapper = mapper;
             _categoryModel = category;
-            _fileUpload = fileUpload;
+            //_fileUpload = fileUpload;
             _webHostEnvironment = webHostEnvironment;
         }
 
@@ -33,23 +33,24 @@ namespace Restaurant.Controllers
         // GET: ProductsController 
         // TODO: Fix Product Service Bug!
         // Try on this method & comment others
-        public ActionResult Index()
+        public IActionResult Index()
         {
             var products = _product.GetAll();
             //var mappedProducts = _mapper.Map<IEnumerable<ProductViewModel>>(products);
 
-            return Content("Test");
+            //return Content("Test");
+            return View(products);
         }
 
 
 
         // GET: ProductsController/Details/5
-        public ActionResult Details(int id)
+        public IActionResult Details(int id)
         {
             // product with it's category
             //var products = _product.GetWithCategoryByID(id);
 
-            var products = _product.GetByID(id);
+            var product = _product.GetByID(id);
             return View();
         }
 
@@ -57,12 +58,12 @@ namespace Restaurant.Controllers
 
         // GET: ProductsController/Create
         [HttpGet]
-        public ActionResult Create()
+        public IActionResult Create()
         {
 
-            var vm = new ProductInfoViewModel();
-            vm.CategoriesIds = _categoryModel.GetAll().Select(c => c.ID).ToList();
-            vm.CategoriesNames = _categoryModel.GetAll().Select(c => c.Name).ToList();
+            var vm = new ProductCreateNewViewModel();
+            //vm.CategoriesIds = _categoryModel.GetAll().Select(c => c.ID).ToList();
+            vm.Categories = _categoryModel.GetAll();
 
             return View(vm);
         }
@@ -70,7 +71,7 @@ namespace Restaurant.Controllers
         // POST: ProductsController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(ProductCreateNewViewModel vm)
+        public IActionResult Create(ProductCreateNewViewModel vm)
         {
             //// for image upload
             //FileUploader fileupload = new FileUploader(_webHostEnvironment);
@@ -80,20 +81,20 @@ namespace Restaurant.Controllers
             // NEED repo helper to get selected categories by name or ids
             //var selectedCategories = _product.Find()
 
-            var newProduct = new ProductCreateNewViewModel
-            {
-                //Image = imgFileName.ToString(),
-                Title = vm.Title,
-                Price = vm.Price,
-                SelectedCategories = vm.SelectedCategories,
-            };
+            //var newProduct = new Product
+            //{
+            //    //Image = imgFileName.ToString(),
+            //    Title = vm.Title,
+            //    Price = vm.Price,
+            //    CategoryID = vm.CategoryID,
+            //};
 
             return View();
 
         }
 
         // GET: ProductsController/Edit/5
-        public ActionResult Edit(int id)
+        public IActionResult Edit(int id)
         {
             return View();
         }
@@ -101,7 +102,7 @@ namespace Restaurant.Controllers
         // POST: ProductsController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public IActionResult Edit(int id, IFormCollection collection)
         {
             try
             {
@@ -114,7 +115,7 @@ namespace Restaurant.Controllers
         }
 
         // GET: ProductsController/Delete/5
-        public ActionResult Delete(int id)
+        public IActionResult Delete(int id)
         {
             return View();
         }
@@ -122,7 +123,7 @@ namespace Restaurant.Controllers
         // POST: ProductsController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public IActionResult Delete(int id, IFormCollection collection)
         {
             try
             {

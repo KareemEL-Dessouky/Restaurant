@@ -1,4 +1,6 @@
-﻿namespace Restaurant.ViewModels.ProductViewModel;
+﻿using Restaurant.Models;
+
+namespace Restaurant.ViewModels.ProductViewModel;
 
 public class ProductCreateNewViewModel
 {
@@ -6,6 +8,7 @@ public class ProductCreateNewViewModel
     public string Title { get; set; } = null!;
     public decimal Price { get; set; }
     public IFormFile? Image { get; set; }
-    public IEnumerable<string> SelectedCategories { get; set; } = null!;
+    public int CategoryID { get; set; }
+    public IEnumerable<Category> Categories { get; set; } = null!;
 
 }
