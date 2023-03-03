@@ -10,7 +10,7 @@ using Restaurant.Models;
 
 namespace Restaurant.Migrations
 {
-    [DbContext(typeof(RestaurantContext))]
+    [DbContext(typeof(RestaurantEntity))]
     partial class RestaurantEntityModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
@@ -37,23 +37,6 @@ namespace Restaurant.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Categories");
-
-                    b.HasData(
-                        new
-                        {
-                            ID = 1,
-                            Name = "Category 1"
-                        },
-                        new
-                        {
-                            ID = 2,
-                            Name = "Category 2"
-                        },
-                        new
-                        {
-                            ID = 3,
-                            Name = "Category 3"
-                        });
                 });
 
             modelBuilder.Entity("Restaurant.Models.Customer", b =>
@@ -97,30 +80,6 @@ namespace Restaurant.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Customers");
-
-                    b.HasData(
-                        new
-                        {
-                            ID = 1,
-                            Address = "some address",
-                            Email = "username1@example.com",
-                            FirstName = "Ramy",
-                            LastName = "Ahmed",
-                            Password = "super secret",
-                            Phone = "2348719749",
-                            Username = "username1"
-                        },
-                        new
-                        {
-                            ID = 2,
-                            Address = "some address",
-                            Email = "username2@example.com",
-                            FirstName = "Ayman",
-                            LastName = "Rady",
-                            Password = "super secret",
-                            Phone = "2348719749",
-                            Username = "username2"
-                        });
                 });
 
             modelBuilder.Entity("Restaurant.Models.Order", b =>
@@ -148,56 +107,6 @@ namespace Restaurant.Migrations
                     b.HasIndex("CustomerID");
 
                     b.ToTable("CustomerOrders");
-
-                    b.HasData(
-                        new
-                        {
-                            ID = 1,
-                            CustomerID = 1,
-                            Notes = "some notes about the order",
-                            PlacedAt = new DateTime(2020, 4, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TotalPrice = 800
-                        },
-                        new
-                        {
-                            ID = 2,
-                            CustomerID = 2,
-                            Notes = "the order needs some salts",
-                            PlacedAt = new DateTime(2023, 1, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TotalPrice = 500
-                        },
-                        new
-                        {
-                            ID = 3,
-                            CustomerID = 2,
-                            Notes = "the order needs some salts",
-                            PlacedAt = new DateTime(2023, 1, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TotalPrice = 500
-                        },
-                        new
-                        {
-                            ID = 4,
-                            CustomerID = 2,
-                            Notes = "the order needs some salts",
-                            PlacedAt = new DateTime(2023, 1, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TotalPrice = 500
-                        },
-                        new
-                        {
-                            ID = 5,
-                            CustomerID = 2,
-                            Notes = "the order needs some salts",
-                            PlacedAt = new DateTime(2023, 1, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TotalPrice = 500
-                        },
-                        new
-                        {
-                            ID = 6,
-                            CustomerID = 2,
-                            Notes = "the order needs some salts",
-                            PlacedAt = new DateTime(2023, 1, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TotalPrice = 500
-                        });
                 });
 
             modelBuilder.Entity("Restaurant.Models.OrderItems", b =>
@@ -219,50 +128,6 @@ namespace Restaurant.Migrations
                     b.HasIndex("ProductID");
 
                     b.ToTable("OrderItems");
-
-                    b.HasData(
-                        new
-                        {
-                            OrderID = 1,
-                            ProductID = 1,
-                            Price = 42,
-                            Quantity = 2
-                        },
-                        new
-                        {
-                            OrderID = 2,
-                            ProductID = 2,
-                            Price = 23,
-                            Quantity = 1
-                        },
-                        new
-                        {
-                            OrderID = 3,
-                            ProductID = 1,
-                            Price = 44,
-                            Quantity = 5
-                        },
-                        new
-                        {
-                            OrderID = 4,
-                            ProductID = 3,
-                            Price = 10,
-                            Quantity = 2
-                        },
-                        new
-                        {
-                            OrderID = 5,
-                            ProductID = 2,
-                            Price = 50,
-                            Quantity = 4
-                        },
-                        new
-                        {
-                            OrderID = 6,
-                            ProductID = 3,
-                            Price = 88,
-                            Quantity = 3
-                        });
                 });
 
             modelBuilder.Entity("Restaurant.Models.Product", b =>
@@ -291,50 +156,6 @@ namespace Restaurant.Migrations
                     b.HasIndex("CategoryID");
 
                     b.ToTable("Products");
-
-                    b.HasData(
-                        new
-                        {
-                            ID = 1,
-                            CategoryID = 1,
-                            Price = 20,
-                            Title = "Product 1"
-                        },
-                        new
-                        {
-                            ID = 2,
-                            CategoryID = 1,
-                            Price = 50,
-                            Title = "Product 2"
-                        },
-                        new
-                        {
-                            ID = 3,
-                            CategoryID = 2,
-                            Price = 88,
-                            Title = "Product 3"
-                        },
-                        new
-                        {
-                            ID = 4,
-                            CategoryID = 2,
-                            Price = 32,
-                            Title = "Product 4"
-                        },
-                        new
-                        {
-                            ID = 5,
-                            CategoryID = 3,
-                            Price = 59,
-                            Title = "Product 5"
-                        },
-                        new
-                        {
-                            ID = 6,
-                            CategoryID = 3,
-                            Price = 200,
-                            Title = "Product 6"
-                        });
                 });
 
             modelBuilder.Entity("Restaurant.Models.Order", b =>
