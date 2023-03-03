@@ -1,4 +1,4 @@
-﻿namespace Restaurant.ViewModels;
+﻿namespace Restaurant.ViewModels.CategoryViewModel;
 
 public class CategoryNameEditViewModel
 {

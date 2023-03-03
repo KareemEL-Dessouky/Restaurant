@@ -1,4 +1,4 @@
-﻿namespace Restaurant.ViewModels;
+﻿namespace Restaurant.ViewModels.CartViewModel;
 public class CartItemViewModel
 {
     public int Id { get; set; }
