@@ -27,16 +27,20 @@ namespace Restaurant.Repositories
         {
             Product product = GetByID(id);
 
-            context.Products.Remove(product);
-            context.SaveChanges();
+            if (product != null)
+            {
+                context.Products.Remove(product);
+                context.SaveChanges();
+            }
+
+            return;
         }
 
         public void Edit(Product product)
         {
-            Product ExistingProduct = GetByID(product.ID);
+            //Product ExistingProduct = GetByID(product.ID);
 
-            // Use auto-mapper
-            // ViewModel reference = ExistingProduct
+            
 
             context.SaveChanges();
         }

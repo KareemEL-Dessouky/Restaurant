@@ -31,16 +31,21 @@ namespace Restaurant.Repositories
         {
             Category category = GetByID(id);
 
-            context.Categories.Remove(category);
-            context.SaveChanges();
+            if (category != null)
+            {
+                context.Categories.Remove(category);
+                context.SaveChanges();
+
+            }
+
+            return;
         }
 
         public void Edit(Category category)
         {
             Category ExistingCategory = GetByID(category.ID);
 
-            // Use auto-mapper
-            // ViewModel reference = ExistingCategory
+            ExistingCategory = category;
 
             context.SaveChanges();
         }

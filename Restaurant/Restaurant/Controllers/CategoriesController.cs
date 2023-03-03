@@ -9,7 +9,7 @@ namespace Restaurant.Controllers;
 public class CategoriesController : Controller
 {
     private readonly IGenericRepository<Category> _category;
-    private IMapper _mapper;
+    private readonly IMapper _mapper;
 
     public CategoriesController(IGenericRepository<Category> category, IMapper mapper)
     {
@@ -25,22 +25,30 @@ public class CategoriesController : Controller
         var mappedCategories = _mapper.Map<List<CategoryViewModel>>(categories);
 
         return View(mappedCategories);
+
+        //return PartialView(mappedCategories);
     }
 
     [HttpGet]
     public IActionResult Create()
     {
-        return View();
+        var NewCategory = new Category();
+
+        return View(NewCategory);
     }
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public IActionResult Create(CategoryNameCreateViewModel vm)
+    public IActionResult Create(Category category)
     {
-        var mappedCategory = _mapper.Map<Category>(vm);
-        _category.Insert(mappedCategory);
+        if (ModelState.IsValid)
+        {
+            _category.Insert(category);
+        
+            return RedirectToAction("Index", "Categories");
+        }
 
-        return RedirectToAction("Index", "Categories");
+        return View(category);
     }
 
 
@@ -48,8 +56,9 @@ public class CategoriesController : Controller
     public IActionResult GetDetails(int id)
     {
         var category = _category.GetByID(id);
-        var mappedCategory = _mapper.Map<CategoryNameDetailViewModel>(category);
-        return View(mappedCategory);
+        //var mappedCategory = _mapper.Map<CategoryNameDetailViewModel>(category);
+
+        return View(category);
     }
 
 
@@ -57,42 +66,34 @@ public class CategoriesController : Controller
     public IActionResult Edit(int id)
     {
         var category = _category.GetByID(id);
-        var mappedCategory = _mapper.Map<CategoryNameEditViewModel>(category);
-        return View(mappedCategory);
+
+        if (category != null)
+            return View(category);
+        else
+            return RedirectToAction("Index");
+        //var mappedCategory = _mapper.Map<CategoryNameEditViewModel>(category);
     }
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public IActionResult Edit(CategoryNameEditViewModel vm)
+    public IActionResult Edit(int id, Category category)
     {
-        //var category = _category.GetByID(id);
         //var mappedCategore = _mapper.Map<CategoryNameDetailViewModel>(category);
 
         // TODO: should it be similar to delete action expected an id params, or view model
 
-        //_category.Edit();
+        if (ModelState.IsValid)
+        {
+            _category.Edit(category);
+        }
 
-        return RedirectToAction("Index", "Categories");
-    }
-
-
-    [HttpGet]
-    public IActionResult Delete(int id)
-    {
-        var category = _category.GetByID(id);
-        //var mappedCategory = _mapper.Map<CategoryNameDeleteViewModel>(category);
         return View(category);
     }
 
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public IActionResult Delete(int id, CategoryNameDeleteViewModel vm)
+    public IActionResult Delete(int id)
     {
         _category.Delete(id);
 
-        return RedirectToAction("Index", "Categories");
+        return RedirectToAction("Index");
     }
-
-
-
 }

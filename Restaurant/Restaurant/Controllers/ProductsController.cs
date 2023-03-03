@@ -89,50 +89,55 @@ namespace Restaurant.Controllers
             //    CategoryID = vm.CategoryID,
             //};
 
-            return View();
+            if (ModelState.IsValid)
+            {
+                var newProduct = _mapper.Map<Product>(vm);
 
+                _product.Insert(newProduct);
+
+                RedirectToAction("Index");
+            }
+
+            return View(vm);
         }
 
         // GET: ProductsController/Edit/5
         public IActionResult Edit(int id)
         {
-            return View();
+            var ExistingProduct = _product.GetByID(id);
+
+            if (ExistingProduct != null)
+            {
+                var vm = _mapper.Map<ProductCreateNewViewModel>(ExistingProduct);
+
+                return View(vm);
+            }
+
+            return RedirectToAction("Index");
         }
 
         // POST: ProductsController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(int id, IFormCollection collection)
+        public IActionResult Edit(int id, ProductCreateNewViewModel vm)
         {
-            try
+            if (ModelState.IsValid)
             {
-                return RedirectToAction(nameof(Index));
+                var ModifiedProduct = _product.GetByID(id);
+                ModifiedProduct = _mapper.Map<Product>(vm);
+                ModifiedProduct.ID = id;
+
+                _product.Edit(ModifiedProduct);
             }
-            catch
-            {
-                return View();
-            }
+
+            return View(vm);
         }
 
-        // GET: ProductsController/Delete/5
+        // Post: ProductsController/Delete/5
         public IActionResult Delete(int id)
         {
-            return View();
-        }
-
-        // POST: ProductsController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            _product.Delete(id);
+            return RedirectToAction("Index");
         }
     }
 }
