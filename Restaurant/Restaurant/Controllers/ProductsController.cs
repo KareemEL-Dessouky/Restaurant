@@ -36,8 +36,9 @@ namespace Restaurant.Controllers
         [Authorize] // check cookie expired or not ??
         public IActionResult Index()
         {
-            var products = _product.GetAll();
+            //var products = _product.GetAll();
             //var mappedProducts = _mapper.Map<IEnumerable<ProductViewModel>>(products);
+            IEnumerable<Product> products = _product.GetAll();
 
             //return Content("Test");
             return View(products);
