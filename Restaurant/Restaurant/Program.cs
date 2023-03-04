@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 using Restaurant.Models;
@@ -17,6 +18,11 @@ namespace Restaurant
             builder.Services.AddDbContext<RestaurantContext>(
                 options => options.UseSqlServer(builder.Configuration.GetConnectionString("Cs"))
                 );
+            // add identity service to work on users & admins, and declare which store you used
+            builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options=>
+            {
+                options.Password.RequireNonAlphanumeric = false;
+            }).AddEntityFrameworkStores<RestaurantContext>();
 
             builder.Services.AddScoped<IGenericRepository<Product>, ProductRepository>();
             builder.Services.AddScoped<IGenericRepository<Customer>, CustomerRepository>();
@@ -38,7 +44,8 @@ namespace Restaurant
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            app.UseAuthentication();  // have valid account 
+            app.UseAuthorization();  // all users allow permission
 
             app.MapControllerRoute(
                 name: "default",
