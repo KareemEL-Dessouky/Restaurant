@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
+
 using Microsoft.AspNetCore.Mvc;
+
 using Restaurant.Models;
 using Restaurant.Repositories;
 using Restaurant.ViewModels.CategoryViewModel;
@@ -10,11 +12,13 @@ public class CategoriesController : Controller
 {
     private readonly IGenericRepository<Category> _category;
     private readonly IMapper _mapper;
+    RestaurantContext context;
 
-    public CategoriesController(IGenericRepository<Category> category, IMapper mapper)
+    public CategoriesController(IGenericRepository<Category> category, IMapper mapper, RestaurantContext context)
     {
         this._category = category;
         _mapper = mapper;
+        this.context = context;
     }
 
 
@@ -22,33 +26,44 @@ public class CategoriesController : Controller
     public IActionResult Index()
     {
         var categories = _category.GetAll();
-        var mappedCategories = _mapper.Map<List<CategoryViewModel>>(categories);
+        //var mappedCategories = _mapper.Map<List<CategoryViewModel>>(categories);
 
-        return View(mappedCategories);
+        return View(categories);
 
-        //return PartialView(mappedCategories);
+        // when Products Ctrl done, return a partial view
+        //return PartialView();
     }
 
     [HttpGet]
     public IActionResult Create()
     {
-        var NewCategory = new Category();
-
-        return View(NewCategory);
+        return View();
     }
 
+    // POST: /Categories/Create
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public IActionResult Create(Category category)
+    public IActionResult Create(string name)
     {
+        var category = _category.Find(x => x.Name == name);
+
         if (ModelState.IsValid)
         {
-            _category.Insert(category);
-        
+            if (category.Count() != 0)
+            {
+                // show message category already exsited if found
+                ViewBag.CategoryFound = name;
+                return PartialView("_CategoryExists");
+            }
+
+            // if not found add the new category to db
+            var newCategory = new Category { Name = name };
+            context.Categories.Add(newCategory);
+            context.SaveChanges();
+
             return RedirectToAction("Index", "Categories");
         }
-
-        return View(category);
+        return View();
     }
 
 
@@ -56,8 +71,8 @@ public class CategoriesController : Controller
     public IActionResult GetDetails(int id)
     {
         var category = _category.GetByID(id);
-        //var mappedCategory = _mapper.Map<CategoryNameDetailViewModel>(category);
 
+        //var mappedCategory = _mapper.Map<CategoryNameDetailViewModel>(category);
         return View(category);
     }
 
@@ -67,33 +82,75 @@ public class CategoriesController : Controller
     {
         var category = _category.GetByID(id);
 
+        if (category == null) return NotFound();
+
+        var vm = new CategoryViewModel
+        {
+            Id = id,
+            Name = category.Name,
+        };
+
         if (category != null)
-            return View(category);
-        else
-            return RedirectToAction("Index");
+        {
+            return View(vm);
+        }
+
+        // If Err
+        return RedirectToAction("Index");
         //var mappedCategory = _mapper.Map<CategoryNameEditViewModel>(category);
     }
 
+    // For admin 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public IActionResult Edit(int id, Category category)
+    public IActionResult Edit([FromRoute] int id, CategoryNameEditViewModel model)
     {
         //var mappedCategore = _mapper.Map<CategoryNameDetailViewModel>(category);
 
-        // TODO: should it be similar to delete action expected an id params, or view model
+        var category = _category.GetByID(id);
+        if (category == null) return NotFound();
 
-        if (ModelState.IsValid)
+        if (model.Name != null)
         {
-            _category.Edit(category);
-        }
+            // edit the name
+            category.Name = model.Name;
+            // save changes, (to be refactored to repos dir)
+            context.SaveChanges();
+            return RedirectToAction("Index");
 
-        return View(category);
+        }
+        return RedirectToAction("Index");
     }
 
+    [HttpGet]
+    public IActionResult Delete(int id, CategoryViewModel vm)
+    {
+        var category = _category.GetByID(id);
+
+        if (category != null)
+        {
+            return RedirectToAction("Index");
+        }
+
+        // if ERR
+        return RedirectToAction("Index");
+    }
+
+    [HttpPost, ActionName("Delete")]
+    [ValidateAntiForgeryToken]
     public IActionResult Delete(int id)
     {
-        _category.Delete(id);
+        try
+        {
+            // delete the catecory
+            _category.Delete(id);
+            return RedirectToAction("Index");
+        }
+        catch (Exception ex)
+        {
 
-        return RedirectToAction("Index");
+            throw new Exception("Err occured during deleting an category record: " + ex.Message);
+        }
+
     }
 }
