@@ -1,4 +1,4 @@
-﻿@*<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <!-- Basic -->
@@ -18,12 +18,12 @@
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <link rel="shortcut icon" href="images/favicon.png" type="" />
+    <link rel="shortcut icon" href="/images/favicon.png" type="" />
 
     <title>INFINITY</title>
 
     <!-- bootstrap core css -->
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
 
     <!--owl slider stylesheet -->
     <link rel="stylesheet"
@@ -35,12 +35,12 @@
           integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ=="
           crossorigin="anonymous" />
     <!-- font awesome style -->
-    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/css/font-awesome.min.css" rel="stylesheet" />
 
     <!-- Custom styles for this template -->
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet" />
     <!-- responsive style -->
-    <link href="css/responsive.css" rel="stylesheet" />
+    <link href="/css/responsive.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -73,16 +73,16 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mx-auto">
                             <li class="nav-item active">
-                                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="/index.html">Home <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="menu.html">Menu</a>
+                                <a class="nav-link" href="/menu.html">Menu</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="about.html">About</a>
+                                <a class="nav-link" href="/about.html">About</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="book.html">Book Table</a>
+                                <a class="nav-link" asp-action="CustomerRegister" asp-controller="Account">Registration</a>
                             </li>
                         </ul>
                         <div class="user_option">
@@ -106,7 +106,7 @@
         </header>
         <!-- end header section -->
         <!-- slider section -->
-        <section class="slider_section">
+@*        <section class="slider_section">
             <div id="customCarousel1" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
@@ -132,7 +132,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section>*@
         @RenderBody()
         <!-- end slider section -->
     </div>
@@ -236,6 +236,7 @@
                 </p>
             </div>
         </div>
+   
     </footer>
     <!-- footer section -->
     <!-- jQery -->
@@ -257,6 +258,7 @@
     <!-- Google Map -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
     <!-- End Google Map -->
+    @RenderSection("Scripts", false);
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
 </body>
 </html>
-*@
