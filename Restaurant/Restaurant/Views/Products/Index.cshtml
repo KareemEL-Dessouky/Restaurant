@@ -1,5 +1,36 @@
 ﻿@{
     ViewData["Title"] = "Products Page";
 }
+@model IEnumerable<Product>;
 
 Hello Products
+
+All Categories:
+@*<partial name="_Categories" />*@
+
+
+
+<h1>Products</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Category</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.ID</td>
+                <td>@product.Title</td>
+                <td>@product.Price</td>
+                <td>@product.Category</td>
+            </tr>
+        }
+    </tbody>
+</table>
