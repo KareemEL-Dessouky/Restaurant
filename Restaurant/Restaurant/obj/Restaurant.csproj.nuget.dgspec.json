@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\Restaurant.csproj": {}
+    "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\Restaurant.csproj": {}
   },
   "projects": {
-    "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\Restaurant.csproj": {
+    "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\Restaurant.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\Restaurant.csproj",
+        "projectUniqueName": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\Restaurant.csproj",
         "projectName": "Restaurant",
-        "projectPath": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\Restaurant.csproj",
-        "packagesPath": "C:\\Users\\NEW LAP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\obj\\",
+        "projectPath": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\Restaurant.csproj",
+        "packagesPath": "C:\\Users\\Amin\\.nuget\\packages\\",
+        "outputPath": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\NEW LAP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Amin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -43,6 +43,10 @@
             "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
               "version": "[12.0.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.3, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -86,7 +90,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

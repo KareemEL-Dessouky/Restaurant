@@ -1,247 +1,455 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\Restaurant.bundle.scp.css",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\Restaurant.bundle.scp.css",
       "PackagePath": "staticwebassets\\Restaurant.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\css\\site.css",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.css"
+    },
+    {
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\css\\font-awesome.min.css",
+      "PackagePath": "staticwebassets\\css\\font-awesome.min.css"
+    },
+    {
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\css\\responsive.css",
+      "PackagePath": "staticwebassets\\css\\responsive.css"
+    },
+    {
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\favicon.ico",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\css\\style.css.map",
+      "PackagePath": "staticwebassets\\css\\style.css.map"
+    },
+    {
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\css\\style.scss",
+      "PackagePath": "staticwebassets\\css\\style.scss"
+    },
+    {
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\js\\site.js",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\fonts\\fontawesome-webfont.ttf",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.ttf"
+    },
+    {
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\fonts\\fontawesome-webfont.woff",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.woff"
+    },
+    {
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\fonts\\fontawesome-webfont.woff2",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.woff2"
+    },
+    {
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\images\\COld05.webp",
+      "PackagePath": "staticwebassets\\images\\COld05.webp"
+    },
+    {
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\images\\Cold02.jpg",
+      "PackagePath": "staticwebassets\\images\\Cold02.jpg"
+    },
+    {
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\images\\Cold03.webp",
+      "PackagePath": "staticwebassets\\images\\Cold03.webp"
+    },
+    {
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\images\\Cold04.jpg",
+      "PackagePath": "staticwebassets\\images\\Cold04.jpg"
+    },
+    {
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\images\\Cold07.jpeg",
+      "PackagePath": "staticwebassets\\images\\Cold07.jpeg"
+    },
+    {
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\images\\about-img.png",
+      "PackagePath": "staticwebassets\\images\\about-img.png"
+    },
+    {
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\images\\bg1.jpg",
+      "PackagePath": "staticwebassets\\images\\bg1.jpg"
+    },
+    {
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\images\\bg2.jpg",
+      "PackagePath": "staticwebassets\\images\\bg2.jpg"
+    },
+    {
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\images\\bg3.jpg",
+      "PackagePath": "staticwebassets\\images\\bg3.jpg"
+    },
+    {
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\images\\bg4.jpg",
+      "PackagePath": "staticwebassets\\images\\bg4.jpg"
+    },
+    {
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\images\\burger01.webp",
+      "PackagePath": "staticwebassets\\images\\burger01.webp"
+    },
+    {
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\images\\burger02.webp",
+      "PackagePath": "staticwebassets\\images\\burger02.webp"
+    },
+    {
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\images\\burger056.jpg",
+      "PackagePath": "staticwebassets\\images\\burger056.jpg"
+    },
+    {
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\images\\client1.jpg",
+      "PackagePath": "staticwebassets\\images\\client1.jpg"
+    },
+    {
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\images\\client2.jpg",
+      "PackagePath": "staticwebassets\\images\\client2.jpg"
+    },
+    {
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\images\\cold01.jpg",
+      "PackagePath": "staticwebassets\\images\\cold01.jpg"
+    },
+    {
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\images\\cold011.jpg",
+      "PackagePath": "staticwebassets\\images\\cold011.jpg"
+    },
+    {
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\images\\cold06.jpg",
+      "PackagePath": "staticwebassets\\images\\cold06.jpg"
+    },
+    {
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\images\\cold09.jpeg",
+      "PackagePath": "staticwebassets\\images\\cold09.jpeg"
+    },
+    {
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\images\\des01.jpg",
+      "PackagePath": "staticwebassets\\images\\des01.jpg"
+    },
+    {
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\images\\des02.webp",
+      "PackagePath": "staticwebassets\\images\\des02.webp"
+    },
+    {
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\images\\des03.jpg",
+      "PackagePath": "staticwebassets\\images\\des03.jpg"
+    },
+    {
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\images\\des04.jpg",
+      "PackagePath": "staticwebassets\\images\\des04.jpg"
+    },
+    {
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\images\\des05.jpg",
+      "PackagePath": "staticwebassets\\images\\des05.jpg"
+    },
+    {
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\images\\des06.jpg",
+      "PackagePath": "staticwebassets\\images\\des06.jpg"
+    },
+    {
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\images\\f2.png",
+      "PackagePath": "staticwebassets\\images\\f2.png"
+    },
+    {
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\images\\f7.png",
+      "PackagePath": "staticwebassets\\images\\f7.png"
+    },
+    {
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\images\\f8.png",
+      "PackagePath": "staticwebassets\\images\\f8.png"
+    },
+    {
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\images\\favicon.png",
+      "PackagePath": "staticwebassets\\images\\favicon.png"
+    },
+    {
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\images\\hero-bg.jpg",
+      "PackagePath": "staticwebassets\\images\\hero-bg.jpg"
+    },
+    {
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\images\\hero-bggg.jpg",
+      "PackagePath": "staticwebassets\\images\\hero-bggg.jpg"
+    },
+    {
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\images\\hot-dring01.jpg",
+      "PackagePath": "staticwebassets\\images\\hot-dring01.jpg"
+    },
+    {
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\images\\hot-drinks05.webp",
+      "PackagePath": "staticwebassets\\images\\hot-drinks05.webp"
+    },
+    {
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\images\\hot02.jpg",
+      "PackagePath": "staticwebassets\\images\\hot02.jpg"
+    },
+    {
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\images\\hot03.jpg",
+      "PackagePath": "staticwebassets\\images\\hot03.jpg"
+    },
+    {
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\images\\hot06.webp",
+      "PackagePath": "staticwebassets\\images\\hot06.webp"
+    },
+    {
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\images\\hot07.webp",
+      "PackagePath": "staticwebassets\\images\\hot07.webp"
+    },
+    {
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\images\\infint.png",
+      "PackagePath": "staticwebassets\\images\\infint.png"
+    },
+    {
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\images\\o1.jpg",
+      "PackagePath": "staticwebassets\\images\\o1.jpg"
+    },
+    {
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\images\\o2.jpg",
+      "PackagePath": "staticwebassets\\images\\o2.jpg"
+    },
+    {
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.js"
+    },
+    {
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\js\\custom.js",
+      "PackagePath": "staticwebassets\\js\\custom.js"
+    },
+    {
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\js\\jquery-3.4.1.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery-3.4.1.min.js"
+    },
+    {
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "C:\\Users\\NEW LAP\\OneDrive\\Desktop\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "E:\\ITI\\Dot NET\\Projects\\MVC Project\\Restaurant\\Restaurant\\Restaurant\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {

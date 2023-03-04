@@ -1,10 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
 using Restaurant.Data;
 
 namespace Restaurant.Models
 {
-    public class RestaurantContext : DbContext
+    public class RestaurantContext : IdentityDbContext<ApplicationUser> //DbContext
     {
         public DbSet<Customer> Customers { get; set; }
 
