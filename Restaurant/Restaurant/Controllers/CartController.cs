@@ -8,11 +8,11 @@ namespace Restaurant.Controllers
 {
     public class CartController : Controller
     {
-        private readonly IGenericRepository<ProductRepository> _productRepository;
-        private readonly IGenericRepository<OrderItemsRepository> _orderItemsRepository;
-        private readonly IGenericRepository<CustomerRepository> _customerRepository;
-        private readonly IGenericRepository<OrderRepository> _orderRepository;
-        public CartController(IGenericRepository<ProductRepository> productRepository, IGenericRepository<OrderItemsRepository> orderItemsRepository, IGenericRepository<CustomerRepository> customerRepository, IGenericRepository<OrderRepository> orderRepository, CustomerRepository customerRepo, RestaurantContext context)
+        private readonly IGenericRepository<Product> _productRepository;
+        private readonly IGenericRepository<OrderItems> _orderItemsRepository;
+        private readonly IGenericRepository<Customer> _customerRepository;
+        private readonly IGenericRepository<Order> _orderRepository;
+        public CartController(IGenericRepository<Product> productRepository, IGenericRepository<OrderItems> orderItemsRepository, IGenericRepository<Customer> customerRepository, IGenericRepository<Order> orderRepository)
         {
             _productRepository = productRepository;
             _orderItemsRepository = orderItemsRepository;
