@@ -1,9 +1,32 @@
-﻿@{
+﻿@using Restaurant.ViewModels.ProductViewModel;
+
+@model List<HomeProductViewModel>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
-@*<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+<h1 class="text-center">All Products</h1>
+
+<div class="container">
+    @foreach (var product in Model)
+    {
+        <div class="card" style="width: 18rem;">
+            <img src="/images/burger056.jpg" class="card-img-top">
+            <div class="card-body">
+                <h2 class="card-title">@product.Title</h2>
+                <h3 class="card-text">@product.Price.ToString("c2")</h3>
+                <h3 class="card-text">@product.Quantity</h3>
+
+                <a asp-controller="cart" class="btn btn-success">+</a>
+                <a asp-controller="cart" class="btn btn-danger">-</a>
+
+                @*<h3 class="card-text">ID: @Model.ID</h3>
+            <h3 class="card-text">Address: @Model.Address</h3>*@
+            </div>
+            <a asp-action="AddToCart" asp-controller="Home" asp-route-id="@product.ID" class="btn btn-primary">Add to Cart</a>
+        </div>
+    }
 </div>
-*@
+
