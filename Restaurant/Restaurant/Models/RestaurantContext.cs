@@ -17,13 +17,17 @@ namespace Restaurant.Models
 
         public DbSet<OrderItems> OrderItems { get; set; }
 
-        public RestaurantContext(DbContextOptions options) : base(options)
-        {
+        //public RestaurantContext(DbContextOptions options) : base(options)
+        //{
 
-        }
+        //}
+        public RestaurantContext(DbContextOptions<RestaurantContext> options)
+       : base(options)
+        { }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<OrderItems>()
                 .HasKey(k => new { k.OrderID, k.ProductID });
 
