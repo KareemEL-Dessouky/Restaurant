@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Restaurant.Models;
+using Restaurant.ViewModels.Login;
 using Restaurant.ViewModels.Register;
 
 namespace Restaurant.Controllers
@@ -58,6 +59,33 @@ namespace Restaurant.Controllers
                 }
             }
             
+            return View(userVM);
+        }
+
+        public IActionResult Login()
+        {
+            return View();
+        }
+        
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Login(UserLogin userVM)
+        {
+            if (ModelState.IsValid)
+            {
+                //check if user is exist
+                ApplicationUser userModel = await userManager.FindByNameAsync(userVM.UserName);
+
+                if (userModel != null)
+                {
+                    await signInManager.PasswordSignInAsync(userModel, userVM.Password, userVM.RememberMe, false);
+                    return RedirectToAction("Index", "Products");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "UserName or Password is invalid;");
+                }
+            }
             return View(userVM);
         }
     }
