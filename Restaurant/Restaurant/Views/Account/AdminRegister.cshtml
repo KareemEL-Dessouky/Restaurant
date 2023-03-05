@@ -4,12 +4,10 @@
     ViewData["Title"] = "AdminRegister";
 }
 
-<h2 class="text-light">Register as an 
-    <strong style="color:darkgoldenrod;">Admin</strong>
-</h2>
+
 
 <hr />
-<div class="row">
+@*<div class="row">
     <div class="col-md-4">
         <form asp-action="AdminRegister" >
             <div asp-validation-summary="All" class="text-danger"></div>
@@ -48,7 +46,79 @@
 <div >
     <a asp-action="Login" class="btn btn-success text-light">Already have account</a>
 </div>
+*@
+
+<section class="book_section layout_padding">
+    <div class="container">
+        <div class="heading_container">
+            <h2 style="color:white">
+                Register as an
+                <strong style="color:darkgoldenrod">Admin</strong>
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form_container">
+                    <form asp-action="AdminRegister">
+                        <div asp-validation-summary="All" class="text-danger"></div>
+
+                        <div>
+                            <input type="text"
+                                   asp-for="UserName"
+                                   class="form-control"
+                                   placeholder="Your Name" />
+                            <span asp-validation-for="UserName" class="text-danger"></span>
+
+                        </div>
+                        <div>
+                            <input asp-for="Email"
+                                   class="form-control"
+                                   placeholder="Your Email" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div>
+                            <input asp-for="Password"
+                                   class="form-control"
+                                   placeholder="Your Password" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+
+                        </div>
+                        <div>
+                            <input asp-for="ConfirmPassword"
+                                   class="form-control"
+                                   placeholder="Your ConfirmPassword" />
+                            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+
+                        </div>
+                        <div>
+                            <input asp-for="Address"
+                                   class="form-control"
+                                   placeholder="Your Address" />
+                            <span asp-validation-for="Address" class="text-danger"></span>
+                        </div>
+                        <div class="btn_box">
+                            <button>Register</button>
+                            <a asp-action="Login" class="text-warning" style="margin-left:0.7em;">Already have account</a>
+
+                        </div><br />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</section>
+
+
+
+
+
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+
