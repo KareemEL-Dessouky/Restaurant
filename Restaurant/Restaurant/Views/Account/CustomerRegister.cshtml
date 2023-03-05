@@ -48,12 +48,15 @@
 <section class="book_section layout_padding">
     <div class="container">
         <div class="heading_container">
-            <h2 style="color:white">Register</h2>
+            <h2 style="color:white">Register as a 
+                <strong style="color:darkgoldenrod">Customer</strong>
+            </h2>
         </div>
         <div class="row">
             <div class="col-md-6">
                 <div class="form_container">
                     <form asp-action="CustomerRegister">
+                        <div asp-validation-summary="All" class="text-danger"></div>
                         <div>
                             <input type="text"
                                    asp-for="UserName"
@@ -90,10 +93,9 @@
                         </div>
                         <div class="btn_box">
                             <button>Register</button>
+                            <a asp-action="Login" class="text-warning" style="margin-left:0.7em;">Already have account</a>
+
                         </div><br />
-                        <div>
-                            <a asp-action="Login" class="btn bg-light text-primary">Already have account</a>
-                        </div>
                     </form>
                 </div>
             </div>
