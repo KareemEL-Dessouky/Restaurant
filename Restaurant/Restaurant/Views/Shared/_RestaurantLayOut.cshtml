@@ -79,9 +79,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" asp-action="Index" asp-controller="Products">Menu</a>
                             </li>
-                            @*<li class="nav-item">
+                            <li class="nav-item">
                                 <a class="nav-link" href="/about.html">About</a>
-                            </li>*@
+                            </li>
 
                             @*<li class="nav-item">
                                 <a class="nav-link" asp-action="CustomerRegister" asp-controller="Account">Registration</a>
@@ -106,6 +106,7 @@
                             </form>
                             @if (User.Identity.IsAuthenticated == false)
                             {
+                                // this icon is a registration 
                                 <a asp-action="CustomerRegister" asp-controller="Account" class="user_link">
                                     <i class="fa fa-user" aria-hidden="true"></i>
                                 </a>
