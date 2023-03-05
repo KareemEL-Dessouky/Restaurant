@@ -17,7 +17,7 @@
                 <li class="">
                     <a asp-controller="Product" asp-action="Index" asp-route-id="@category.ID">@category.Name</a>
                 </li>
-                <a class="" href="@Url.Action(nameof(CategoriesController.Edit), "categories", new { id = category.ID })">Edit Category</a>
+                <a class="" href="@Url.Action(nameof(ProductCategoriesController.Edit), "categories", new { id = category.ID })">Edit Category</a>
                 <form onclick="return confirm('Are you sure??');" method="post" asp-controller="categories" asp-action="Delete" asp-route-id="@category.ID">
                     <input type="submit" value="Delete" class="" />
                     @Html.AntiForgeryToken()
