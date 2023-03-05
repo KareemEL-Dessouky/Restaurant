@@ -13,7 +13,17 @@ namespace Restaurant
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-            builder.Services.AddControllersWithViews();
+            builder.Services.AddControllersWithViews().AddSessionStateTempDataProvider(); // Session Config
+
+            builder.Services.AddDistributedMemoryCache();
+
+            builder.Services.AddSession(options =>
+            {
+                options.Cookie.Name = ".ShoppingCart.Session";
+                options.Cookie.IsEssential = true;
+            });
+
+            builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             builder.Services.AddDbContext<RestaurantContext>(
                 options => options.UseSqlServer(builder.Configuration.GetConnectionString("Cs"))
@@ -23,6 +33,7 @@ namespace Restaurant
             {
                 options.Password.RequireNonAlphanumeric = false;
             }).AddEntityFrameworkStores<RestaurantContext>();
+
 
             builder.Services.AddScoped<IGenericRepository<Product>, ProductRepository>();
             builder.Services.AddScoped<IGenericRepository<Customer>, CustomerRepository>();
@@ -46,6 +57,8 @@ namespace Restaurant
 
             app.UseAuthentication();  // have valid account 
             app.UseAuthorization();  // all users allow permission
+
+            app.UseSession(); // Usage of Session
 
             app.MapControllerRoute(
                 name: "default",

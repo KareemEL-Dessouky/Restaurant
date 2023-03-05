@@ -1,10 +1,14 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using Restaurant.Models;
 using Restaurant.Repositories;
+using Restaurant.ViewModels.CartViewModel;
 using Restaurant.ViewModels.ProductViewModel;
+using Microsoft.AspNetCore.Http;
 using System.Diagnostics;
+using System.Collections.Generic;
 
 namespace Restaurant.Controllers
 {
@@ -20,17 +24,20 @@ namespace Restaurant.Controllers
         private readonly IGenericRepository<Product> _product;
         private readonly IGenericRepository<OrderItems> _orderItems;
         private readonly IMapper _mapper;
+        private readonly IHttpContextAccessor session;
 
-        List<Product> ShoppingCartItems = new List<Product>();
+        //List<Product> ShoppingCartItems = new List<Product>();
+        List<CartItemViewModel> ShoppingCartItems = new List<CartItemViewModel>();
 
-        public HomeController(IGenericRepository<Product> product, IGenericRepository<OrderItems> orderItems, IMapper mapper)
+        public HomeController(IGenericRepository<Product> product, IGenericRepository<OrderItems> orderItems, IMapper mapper, IHttpContextAccessor session)
         {
             _product = product;
             _orderItems = orderItems;
             _mapper = mapper;
+            this.session = session;
         }
 
-        [Authorize] // check cookie expired or not ??
+        //[Authorize] // check cookie expired or not ??
         public IActionResult Index()
         {
             // check if user authenticated or not
@@ -48,9 +55,14 @@ namespace Restaurant.Controllers
         public IActionResult AddToCart(int id)
         {
             var AddedProduct = _product.GetByID(id);
-            //var AddedProduct = _mapper.Map<Product>(vm);
+            var mappedProduct = _mapper.Map<CartItemViewModel>(AddedProduct);
 
-            ShoppingCartItems.Add(AddedProduct);
+            string storedProduct = JsonConvert.SerializeObject(mappedProduct);
+
+            //HttpContext.Session.SetString("storedProduct", storedProduct);
+
+
+            ShoppingCartItems.Add(mappedProduct);
 
             return RedirectToAction("Index");
         }

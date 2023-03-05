@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 
 using Restaurant.Models;
+using Restaurant.ViewModels.CartViewModel;
 using Restaurant.ViewModels.CategoryViewModel;
 using Restaurant.ViewModels.ProductViewModel;
 
@@ -19,5 +20,6 @@ public class AutomapperProfile : Profile
         CreateMap<Product, ProductViewModel>();
         CreateMap<Product, ProductListViewModel>();
         CreateMap<Product, HomeProductViewModel>();
+        CreateMap<Product, CartItemViewModel>();
     }
 }
