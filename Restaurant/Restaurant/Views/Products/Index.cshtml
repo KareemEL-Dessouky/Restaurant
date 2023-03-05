@@ -2,42 +2,60 @@
 @model IEnumerable<ProductListViewModel>
 
 @{
-    ViewData["Title"] = "List of Food Products";
+    ViewData["Title"] = "List of food";
 }
 
-<h1>@ViewData["Title"]</h1>
 
-<p>
+
+
+<style>
+    .container{
+        width:700px;
+    }
+    .table{
+        color: #e9ecef;
+        border: 1px solid #fff;
+        text-align:center;
+    }
+    h1{color:white}
+
+    .action{justify-content: space-around}
+</style>
+<div class="container">
+    <h1>@ViewData["Title"]</h1>
+    <p>
     <a asp-action="Create" class="btn btn-primary">Add New Product</a>
 </p>
-
-<table class="table">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Category</th>
-            <th>Action</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+    <table class="table">
+        <thead>
             <tr>
-                <td>@item.ID</td>
-                <td>@item.Title</td>
-                <td>@item.Price.ToString("C")</td>
-                <td>@item.Category</td>
-                <td>
-                    <a asp-controller="products" asp-action="Edit" asp-route-id="@item.ID" class="btn btn-primary">Edit</a>
-                    @*<a asp-controller="products" asp-action="Delete" asp-route-id="@item.ID" class="btn btn-danger">Delete</a>*@
-                    <form onclick="return confirm('Are you sure??');" method="post" asp-controller="products" asp-action="Delete" asp-route-id="@item.ID">
-                        <input type="submit" value="Delete" class="" />
-                        @Html.AntiForgeryToken()
-                    </form>
-                </td>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Action</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.ID</td>
+                    <td>@item.Title</td>
+                    <td>@item.Price.ToString("C")</td>
+                    <td>@item.Category</td>
+                    <td class="d-flex gap-2 action">
+                        <a asp-controller="products" asp-action="Edit" asp-route-id="@item.ID" class="btn btn-primary">Edit</a>
+                        @*<a asp-controller="products" asp-action="Delete" asp-route-id="@item.ID" class="btn btn-danger">Delete</a>*@
+                        <form onclick="return confirm('Are you sure??');" method="post" asp-controller="products" asp-action="Delete" asp-route-id="@item.ID">
+                            <input type="submit" value="Delete" class="btn btn-danger" />
+                            @Html.AntiForgeryToken()
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+
