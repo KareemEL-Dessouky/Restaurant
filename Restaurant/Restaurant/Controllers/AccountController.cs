@@ -78,7 +78,7 @@ namespace Restaurant.Controllers
 
                 // create function don't take viewModel, it's only take model so:
                 ApplicationUser userModel = new ApplicationUser();
-
+               
                 userModel.UserName = userVM.UserName;
                 userModel.Email = userVM.Email;
                 userModel.PasswordHash = userVM.Password;

@@ -1,9 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace Restaurant.ViewModels.Register
 {
     public class UserRegister
     {
+        
         [Required]
         [MinLength(3)]
         [MaxLength(20)]
