@@ -2,8 +2,10 @@
 
 namespace Restaurant.ViewModels.ProductViewModel;
 
-public class ProductCreateNewViewModel
+public class ProductListViewModel
 {
+    public int ID { get; set; }
+
     // product Name (left for automapper)
     [Required]
     [Display(Name = "Product:")]
@@ -19,6 +21,10 @@ public class ProductCreateNewViewModel
 
     [Required(ErrorMessage = "Choose a product category")]
     public int CategoryID { get; set; }
+
+    public string Category { get; set; } = null!;
+
+    // exluded for model state, require another view model
     //public IEnumerable<Category> Categories { get; set; } = null!;
 
 }

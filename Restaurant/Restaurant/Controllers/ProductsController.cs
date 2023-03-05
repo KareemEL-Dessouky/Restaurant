@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Authorization;
+
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 using Restaurant.Helper;
 using Restaurant.Models;
@@ -11,134 +12,192 @@ namespace Restaurant.Controllers
 {
     public class ProductsController : Controller
     {
-        // TODO: refactor for category list items (name, value)
-        private readonly IGenericRepository<Category> _categoryModel;
+        private readonly IGenericRepository<Category> _category;
 
         private readonly IGenericRepository<Product> _product;
+
+        RestaurantContext _context;
         private IMapper _mapper;
 
         // upload img
         private readonly FileUploader _fileUpload;
         private readonly IWebHostEnvironment _webHostEnvironment;
-        public ProductsController(IGenericRepository<Product> product, IMapper mapper, IGenericRepository<Category> category, /*FileUploader fileUpload,*/ IWebHostEnvironment webHostEnvironment)
+        public ProductsController(IGenericRepository<Product> product, IMapper mapper, IGenericRepository<Category> category, /*FileUploader fileUpload,*/ IWebHostEnvironment webHostEnvironment, RestaurantContext context)
         {
             _product = product;
             _mapper = mapper;
-            _categoryModel = category;
+            _category = category;
             //_fileUpload = fileUpload;
             _webHostEnvironment = webHostEnvironment;
+            _context = context;
         }
 
 
         // GET: ProductsController 
-        // TODO: Fix Product Service Bug!
-        // Try on this method & comment others
+        //[Authorize] // check cookie expired or not ??
         public IActionResult Index()
         {
-            //var products = _product.GetAll();
-            //var mappedProducts = _mapper.Map<IEnumerable<ProductViewModel>>(products);
-            IEnumerable<Product> products = _product.GetAll();
+            var products = _product.GetAll();
 
-            //return Content("Test");
-            return View(products);
+            var mappedProducts = _mapper.Map<IEnumerable<ProductListViewModel>>(products);
+
+            if (mappedProducts == null) return NotFound();
+            foreach (var product in mappedProducts)
+            {
+                var category = _category.Find(c => c.ID == product.CategoryID).FirstOrDefault();
+                product.Category = category?.Name;
+            }
+
+            // render UI
+            return View(mappedProducts);
         }
 
 
 
-        // GET: ProductsController/Details/5
-        public IActionResult Details(int id)
-        {
-            // product with it's category
-            //var products = _product.GetWithCategoryByID(id);
-
-            var product = _product.GetByID(id);
-            return View();
-        }
-
-
-
-        // GET: ProductsController/Create
+        // GET: Product/Create
         [HttpGet]
         public IActionResult Create()
         {
+            var vm = new ProductViewModel();
 
-            var vm = new ProductCreateNewViewModel();
-            //vm.CategoriesIds = _categoryModel.GetAll().Select(c => c.ID).ToList();
-            vm.Categories = _categoryModel.GetAll();
+            var categories = _category.GetAll();
 
+            // populate list for select html view
+            ViewBag.CategoriesList = new SelectList(categories, "ID", "Name");
+            ViewBag.Categories = categories;
             return View(vm);
         }
 
-        // POST: ProductsController/Create
+
+        // POST: Product/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(ProductCreateNewViewModel vm)
+        public IActionResult Create(ProductViewModel vm)
         {
-            //// for image upload
+            //    //// for image upload
             //FileUploader fileupload = new FileUploader(_webHostEnvironment);
-
             //string imgFileName = fileupload.Upload(vm.Image);
 
-            // NEED repo helper to get selected categories by name or ids
-            //var selectedCategories = _product.Find()
-
-            //var newProduct = new Product
-            //{
-            //    //Image = imgFileName.ToString(),
-            //    Title = vm.Title,
-            //    Price = vm.Price,
-            //    CategoryID = vm.CategoryID,
-            //};
+            // get the choose category from user form
+            var choosenCategory = _category.Find(c => c.ID == vm.CategoryID).FirstOrDefault();
 
             if (ModelState.IsValid)
             {
+                // map view model data from user into a record
                 var newProduct = _mapper.Map<Product>(vm);
 
-                _product.Insert(newProduct);
+                try
+                {
+                    // update db records for products
+                    _product.Insert(newProduct);
+                }
+                catch (Exception ex)
+                {
+                    ModelState.AddModelError(string.Empty, "Error occured during insertdatabase, please try again: " + ex.Message);
 
-                RedirectToAction("Index");
+                    return View(vm);
+
+                }
             }
-
-            return View(vm);
+            // unexpected err
+            return RedirectToAction(nameof(Index));
         }
 
+
         // GET: ProductsController/Edit/5
-        public IActionResult Edit(int id)
+        public IActionResult Edit([FromRoute] int id)
         {
-            var ExistingProduct = _product.GetByID(id);
 
-            if (ExistingProduct != null)
+            var product = _product.GetByID(id);
+            if (product == null)
             {
-                var vm = _mapper.Map<ProductCreateNewViewModel>(ExistingProduct);
-
-                return View(vm);
+                return NotFound();
             }
 
-            return RedirectToAction("Index");
+            // get the model out of the record
+            var productViewModel = _mapper.Map<ProductViewModel>(product);
+
+            var categories = _category.GetAll();
+
+            //// update categories into the view
+            //productViewModel.Categories = categories;
+
+            // populate list for select html view
+            ViewBag.CategoriesList = new SelectList(categories, "ID", "Name");
+            ViewBag.Categories = categories;
+
+            return View(productViewModel);
         }
 
         // POST: ProductsController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(int id, ProductCreateNewViewModel vm)
+        public IActionResult Edit(int id, ProductViewModel vm)
         {
+
             if (ModelState.IsValid)
             {
-                var ModifiedProduct = _product.GetByID(id);
-                ModifiedProduct = _mapper.Map<Product>(vm);
-                ModifiedProduct.ID = id;
+                //var product = _mapper.Map<Product>(ProductViewModel);
 
-                _product.Edit(ModifiedProduct);
+                var product = _product.GetByID(id);
+
+                var chosenCategory = _category.Find(c => c.ID == vm.CategoryID).FirstOrDefault();
+                //product.Category = chosenCategory;
+
+
+                try
+                {
+                    // to refactor to product repository
+                    product.Price = vm.Price;
+                    product.Title = vm.Title;
+                    product.Category = chosenCategory;
+                    // apply change to db
+                    _context.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    ModelState.AddModelError(string.Empty, "Error occured during updating the database, please try again: " + ex.Message);
+
+                    return View(vm);
+                }
+
+                return RedirectToAction(nameof(Index));
             }
 
-            return View(vm);
+            // unexpected err
+            return RedirectToAction(nameof(Index));
         }
 
         // Post: ProductsController/Delete/5
+
+        [HttpGet]
+        public IActionResult Delete(int id, ProductViewModel vm)
+        {
+            var product = _product.GetByID(id);
+
+            if (product != null)
+            {
+                return RedirectToAction("Index");
+            }
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
         public IActionResult Delete(int id)
         {
-            _product.Delete(id);
-            return RedirectToAction("Index");
+            try
+            {
+                // delete the product
+                _product.Delete(id);
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Err occured during deleting the product record: " + ex.Message);
+            }
+
         }
     }
 }

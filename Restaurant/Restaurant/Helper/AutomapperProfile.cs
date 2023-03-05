@@ -15,8 +15,9 @@ public class AutomapperProfile : Profile
         CreateMap<Category, CategoryNameDetailViewModel>();
         CreateMap<Category, CategoryNameDeleteViewModel>();
         CreateMap<CategoryNameCreateViewModel, Category>();
-        CreateMap<ProductCreateNewViewModel, Product>();
-        CreateMap<Product, ProductCreateNewViewModel>();
+        CreateMap<ProductViewModel, Product>();
+        CreateMap<Product, ProductViewModel>();
+        CreateMap<Product, ProductListViewModel>();
         CreateMap<Product, HomeProductViewModel>();
     }
 }

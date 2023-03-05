@@ -1,54 +1,43 @@
-﻿@model IEnumerable<Restaurant.ViewModels.ProductViewModel.ProductViewModel>
+﻿@using Restaurant.ViewModels.ProductViewModel;
+@model IEnumerable<ProductListViewModel>
 
 @{
-    ViewData["Title"] = "Index";
-    Layout = "_RestaurantLayOut";
+    ViewData["Title"] = "List of Food Products";
 }
 
-<h1>Index2</h1>
+<h1>@ViewData["Title"]</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-primary">Add New Product</a>
 </p>
+
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.ID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Price)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Image)
-            </th>
-            <th></th>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Image)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ID</td>
+                <td>@item.Title</td>
+                <td>@item.Price.ToString("C")</td>
+                <td>@item.Category</td>
+                <td>
+                    <a asp-controller="products" asp-action="Edit" asp-route-id="@item.ID" class="btn btn-primary">Edit</a>
+                    @*<a asp-controller="products" asp-action="Delete" asp-route-id="@item.ID" class="btn btn-danger">Delete</a>*@
+                    <form onclick="return confirm('Are you sure??');" method="post" asp-controller="products" asp-action="Delete" asp-route-id="@item.ID">
+                        <input type="submit" value="Delete" class="" />
+                        @Html.AntiForgeryToken()
+                    </form>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
