@@ -30,7 +30,7 @@ namespace Restaurant.Controllers
             _mapper = mapper;
         }
 
-        [Authorize] // check cookie expired or not ??
+        //[Authorize] // check cookie expired or not ??
         public IActionResult Index()
         {
             // check if user authenticated or not

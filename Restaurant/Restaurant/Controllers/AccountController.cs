@@ -62,6 +62,56 @@ namespace Restaurant.Controllers
             return View(userVM);
         }
 
+        //Register for Admins 
+        public IActionResult AdminRegister()
+        {
+            return View();
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> AdminRegister(UserRegister userVM) // UserRegister it's viewModel have data of registration
+        {
+            if (ModelState.IsValid)
+            {
+
+                // create function don't take viewModel, it's only take model so:
+                ApplicationUser userModel = new ApplicationUser();
+
+                userModel.UserName = userVM.UserName;
+                userModel.Email = userVM.Email;
+                userModel.PasswordHash = userVM.Password;
+                userModel.Address = userVM.Address;
+
+                // save datat in database, by using Store if result true will save data
+                // don't forget hash input password
+                IdentityResult result = await userManager.CreateAsync(userModel, userVM.Password);
+
+                if (result.Succeeded)
+                {
+                    // add a role to make register as admin
+                    await userManager.AddToRoleAsync(userModel, "Admin");
+                    
+                    //create cookie authantication to make user do login,
+                    //cookie can be session/persistent if false/true
+                    await signInManager.SignInAsync(userModel, false);
+                    return RedirectToAction("Index", "Products");
+                }
+                else
+                {
+                    // remeber there are errors, but this errors it's IEnumerable 
+                    // and ModelError take a string, so use foreach 
+                    foreach (var error in result.Errors)
+                    {
+                        ModelState.AddModelError("", error.Description);
+                    }
+                }
+            }
+
+            return View(userVM);
+        }
+
         public IActionResult Login()
         {
             return View();
