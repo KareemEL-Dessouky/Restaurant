@@ -1,0 +1,31 @@
+﻿@model List<Category>
+
+<h1>Categories</h1>
+
+@if (!Model.Any())
+{
+    <p>No categories</p>
+}
+
+@*section to be movel in partial (products page or home)*@
+
+<div class="row">
+    <div class="col">
+        <ul class="ml-5">
+            @foreach (var category in Model)
+            {
+                <li class="">
+                    <a asp-controller="Product" asp-action="Index" asp-route-id="@category.ID">@category.Name</a>
+                </li>
+                <a class="" href="@Url.Action(nameof(CategoriesController.Edit), "categories", new { id = category.ID })">Edit Category</a>
+                <form onclick="return confirm('Are you sure??');" method="post" asp-controller="categories" asp-action="Delete" asp-route-id="@category.ID">
+                    <input type="submit" value="Delete" class="" />
+                    @Html.AntiForgeryToken()
+                </form>
+            }
+        </ul>
+    </div>
+</div>
+
+<a asp-controller="Categories" asp-action="Create" class="btn btn-primary">Add category</a>
+
