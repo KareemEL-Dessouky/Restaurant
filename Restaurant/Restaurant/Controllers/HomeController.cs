@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Restaurant.Models;
 using Restaurant.Repositories;
@@ -29,8 +30,14 @@ namespace Restaurant.Controllers
             _mapper = mapper;
         }
 
+        [Authorize] // check cookie expired or not ??
         public IActionResult Index()
         {
+            // check if user authenticated or not
+            // inherit User_property from controller_Base
+            //this property it's getMethod, so don't assigned value to it..
+            bool user = User.Identity.IsAuthenticated;
+
             var products = _product.GetAll();
 
             var mappedProducts = _mapper.Map<List<HomeProductViewModel>>(products);

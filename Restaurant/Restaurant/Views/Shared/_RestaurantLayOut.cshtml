@@ -73,22 +73,29 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mx-auto">
                             <li class="nav-item active">
-                                <a class="nav-link" href="/index.html">Home <span class="sr-only">(current)</span></a>
+                                <a class="nav-link" asp-action="Index" asp-controller="Home">Home
+                                    <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" asp-action="Index" asp-controller="Products">Menu</a>
                             </li>
-                            <li class="nav-item">
+                            @*<li class="nav-item">
                                 <a class="nav-link" href="/about.html">About</a>
-                            </li>
-                            <li class="nav-item">
+                            </li>*@
+
+                            @*<li class="nav-item">
                                 <a class="nav-link" asp-action="CustomerRegister" asp-controller="Account">Registration</a>
-                            </li>
+                            </li>*@
+
+                            @if (User.Identity.IsAuthenticated == true)
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-action="" asp-controller="">Welcome @User.Identity.Name</a>
+                                </li>
+                            }
                         </ul>
                         <div class="user_option">
-                            <a href="logIN.html" class="user_link">
-                                <i class="fa fa-user" aria-hidden="true"></i>
-                            </a>
+                            
                             <a class="cart_link" href="cart.html">
                                 <i class="fa-solid fa-cart-shopping"></i>
                             </a>
@@ -97,7 +104,17 @@
                                     <i class="fa fa-search" aria-hidden="true"></i>
                                 </button>
                             </form>
-                            <a href="" class="order_online"> Order Online </a>
+                            @if (User.Identity.IsAuthenticated == false)
+                            {
+                                <a asp-action="CustomerRegister" asp-controller="Account" class="user_link">
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                </a>
+                                <a asp-action="Login" asp-controller="Account" class="order_online"> LogIn  </a>
+                            }
+                            else 
+                            {
+                                <a asp-action="Signout" asp-controller="Account" class="order_online"> LogOut  </a>
+                            }
                         </div>
                     </div>
                 </nav>

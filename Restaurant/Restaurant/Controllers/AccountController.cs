@@ -46,7 +46,7 @@ namespace Restaurant.Controllers
                     //create cookie authantication to make user do login,
                     //cookie can be session/persistent if false/true
                     await signInManager.SignInAsync(userModel, false);
-                    return RedirectToAction("Index", "Products");
+                    return RedirectToAction("Index", "Home");
                 }
                 else
                 {
@@ -79,7 +79,7 @@ namespace Restaurant.Controllers
                 if (userModel != null)
                 {
                     await signInManager.PasswordSignInAsync(userModel, userVM.Password, userVM.RememberMe, false);
-                    return RedirectToAction("Index", "Products");
+                    return RedirectToAction("Index", "Home");
                 }
                 else
                 {
@@ -87,6 +87,13 @@ namespace Restaurant.Controllers
                 }
             }
             return View(userVM);
+        }
+
+        // SignOut, will expire the cookie 
+        public async Task<IActionResult> Signout()
+        {
+            await signInManager.SignOutAsync();
+            return RedirectToAction("Login");
         }
     }
 }

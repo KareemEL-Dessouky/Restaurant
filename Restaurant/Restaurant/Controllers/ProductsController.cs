@@ -33,7 +33,6 @@ namespace Restaurant.Controllers
         // GET: ProductsController 
         // TODO: Fix Product Service Bug!
         // Try on this method & comment others
-        [Authorize] // check cookie expired or not ??
         public IActionResult Index()
         {
             //var products = _product.GetAll();
