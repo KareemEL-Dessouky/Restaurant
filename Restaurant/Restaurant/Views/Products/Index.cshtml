@@ -6,8 +6,19 @@
 }
 
 <style>
-    .container {
-        width: 700px;
+    .container-list-food {
+        
+        margin-left: 2rem;
+        margin-top: 3rem;
+        background-color: rgba(0, 0, 0, 0.5);
+        flex-basis: 25%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 55%;
+        margin: 1px auto;
+        padding: 20px;
     }
 
     .table {
@@ -24,12 +35,12 @@
         justify-content: space-around
     }
 </style>
-<div class="container">
+<div class="container-list-food">
     <h1>@ViewData["Title"]</h1>
     <p>
         <a asp-action="Create" class="btn btn-primary">Add New Product</a>
     </p>
-    <table class="table table-striped table-hover">
+    <table class="table table-striped ">
         <thead>
             <tr>
                 <th>ID</th>
@@ -46,7 +57,9 @@
                 <tr>
                     <td>@item.ID</td>
                     <td>
-                        <img src="@item.Image" alt="@item.Title" style="max-height: 100px" />
+                        <img src="@item.Image" alt="@item.Title" style="width: 75px;
+    border-radius: 50%;
+    height: 75px;" />
                     </td>
                     <td>@item.Title</td>
                     <td>@item.Price.ToString("C")</td>

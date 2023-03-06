@@ -8,12 +8,13 @@
 
 <style>
     .container-for-products {
-        display: grid;
-        text-align: center;
-        grid-template-columns: auto auto auto auto;
+            display: flex;
+    flex-wrap: wrap;
         gap: 10px;
         padding-left: 50px;
         padding-right: 50px;
+        gap: 10px;
+
     }
     h1{
         color:white
@@ -22,10 +23,30 @@
     .add-cart{
         justify-content:space-around;
         align-items:center;
+        margin-bottom: 10px;
     }
+
+    .add-cart input{
+            width: 100px;
+        }
+
+        .add-cart putton {
+        }
 
     .add-cart i:hover{
             color: #ffbe33
+    }
+    .card{
+        padding:3px
+    }
+    h3{
+font-size: 22px;
+    font-weight: bold;
+    color: #e91e63;
+    background: #eee;
+    padding: 2px;
+    width: 80px;
+    border-radius: 5px;
     }
 </style>
 <h1 class="text-center">All Products</h1>
@@ -33,7 +54,7 @@
 <div class="container-for-products">
     @foreach (var product in Model)
     {
-        <div class="card" style="width: 18rem;">
+        <div class="card" style="    width: 320px;">
             <img src="/images/burger056.jpg" class="card-img-top">
             <div class="card-body">
                 <h2 class="card-title">@product.Title</h2>
@@ -44,16 +65,16 @@
 
                 @*<h3 class="card-text">ID: @Model.ID</h3>
             <h3 class="card-text">Address: @Model.Address</h3>*@
-            </div>
-            <div class="d-flex add-cart">
                 <h3 class="card-text">@product.Price.ToString("c2")</h3>
+            </div>
+            <div>
 
 
-                <form method="post" asp-controller="cart" asp-action="AddToCart" asp-route-id="@product.ID">
-                    <div class="form-group">
-                        <label for="quantity">Quantity:</label>
-                        <input type="number" class="form-control" id="quantity" name="quantity" min="1" max="3" value="1">
-                    </div>
+                <form class="d-flex add-cart"  method="post" asp-controller="cart" asp-action="AddToCart" asp-route-id="@product.ID">
+            
+                        @*<label for="quantity">Quantity:</label>*@
+                        <input type="number" class="form-control" id="quantity" name="quantity" min="1" max="3" value="1" placeholder="Quantity">
+  
                     <button type="submit" class="btn btn-primary"><i class="fa-solid fa-cart-shopping fa-xl"></i>Add to Cart</button>
                 </form>
             </div>
