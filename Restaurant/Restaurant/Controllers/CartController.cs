@@ -2,8 +2,7 @@
 
 using Microsoft.AspNetCore.Mvc;
 
-using Newtonsoft.Json;
-
+using Restaurant.Helper;
 using Restaurant.Models;
 using Restaurant.Repositories;
 using Restaurant.ViewModels.CartViewModel;
@@ -47,7 +46,7 @@ namespace Restaurant.Controllers
             mappedProduct.Quantity = quantity;
 
             // save cart item to session
-            HttpContext.Session.SetString("CartItem", JsonConvert.SerializeObject(mappedProduct));
+            HttpContext.Session.Set("CartItem", mappedProduct);
 
 
             // Redirect user to checkout page
@@ -60,9 +59,8 @@ namespace Restaurant.Controllers
         public IActionResult Checkout(CartItemViewModel cartItemViewModel)
         {
             // get and deserialize data json
-            var cartItemJson = HttpContext.Session.GetString("CartItem");
-            var cartItem = cartItemJson != null ?
-                JsonConvert.DeserializeObject<CartItemViewModel>(cartItemJson) : null;
+            var cartItem = HttpContext.Session.Get<CartItemViewModel>("CartItem");
+
 
             var order = _context.OrderItems.FirstOrDefault(o => o.ProductID == cartItem.Id);
 
