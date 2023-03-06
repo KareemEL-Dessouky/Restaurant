@@ -38,7 +38,7 @@ namespace Restaurant.Controllers
             if (addedProduct == null)
             {
                 // output msg: try again
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Home");
             }
 
 
@@ -48,9 +48,7 @@ namespace Restaurant.Controllers
             // save cart item to session
             HttpContext.Session.Set("CartItem", mappedProduct);
 
-
-            // Redirect user to checkout page
-            return RedirectToAction("Checkout");
+            return RedirectToAction("Index", "Home");
 
         }
 
