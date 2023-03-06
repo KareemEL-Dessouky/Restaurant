@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -34,8 +34,14 @@ namespace Restaurant.Controllers
 
         // GET: /Cart/AddtoCart
         // get related cart info for specific customer
+        [Authorize]
         public IActionResult AddToCart(int id, int quantity)
         {
+            // check if user authenticated or not
+            // inherit User_property from controller_Base
+            //this property it's getMethod, so don't assigned value to it..
+            bool user = User.Identity.IsAuthenticated;
+
             var addedProduct = _product.GetByID(id);
 
             if (addedProduct == null)

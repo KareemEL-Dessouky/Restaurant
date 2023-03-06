@@ -46,7 +46,7 @@ namespace Restaurant.Controllers
                     //create cookie authantication to make user do login,
                     //cookie can be session/persistent if false/true
                     await signInManager.SignInAsync(userModel, false);
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("AddToCart", "Cart");
                 }
                 else
                 {
@@ -129,11 +129,11 @@ namespace Restaurant.Controllers
                 if (userModel != null)
                 {
                     await signInManager.PasswordSignInAsync(userModel, userVM.Password, userVM.RememberMe, false);
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("AddToCart", "Cart");
                 }
                 else
                 {
-                    ModelState.AddModelError("", "UserName or Password is invalid;");
+                    ModelState.AddModelError("", "UserName or Password is invalid");
                 }
             }
             return View(userVM);

@@ -91,19 +91,10 @@
                             {
                                 // this icon is a registration 
                                 <li class="nav-item">
-                                    <div class="dropdown " style="    background-color: transparent;
-    border: 1px solid #fff;
-    border-radius: 6px;">
-                                        <a class="nav-link dropdown-toggle" role="button"  id="dropdownMenuLink" data-toggle="dropdown" 
-                                        aria-haspopup="true" aria-expanded="false">
-                                            Register as
+                                    <div class="dropdown " style="background-color: transparent; border: 1px solid #fff; border-radius: 6px;">
+                                        <a class="nav-link  role="button" asp-action="CustomerRegister" asp-controller="Account">
+                                            Register
                                         </a>
-
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                            <a class="dropdown-item" asp-action="CustomerRegister" asp-controller="Account">User</a>
-                                            <a class="dropdown-item" asp-action="AdminRegister" asp-controller="Account">Admin</a>
-                                        
-                                        </div>
                                     </div>
                                 </li>
                             }
@@ -111,15 +102,27 @@
                             @if (User.Identity.IsAuthenticated == true)
                             {
                                 <li class="nav-item">
-                                    <a class="nav-link" asp-action="Profile" asp-controller="Customer">Welcome @User.Identity.Name</a>
+                                    <a class="nav-link" >Welcome @User.Identity.Name</a>
                                 </li>
+
+                                @*<li class="nav-item">
+                                    <div class="dropdown " style="background-color:darkblue; border: 1px solid darkblue; border-radius: 6px;">
+                                        <a class="nav-link text-light role="button" asp-action="AdminRegister" asp-controller="Account">
+                                            Upgrade your account 
+                                        </a>
+                                    </div>
+                                </li>*@
+                                
                             }
+
                         </ul>
-                        <div class="user_option">
-                            
-                            <a class="cart_link" asp-action="Checkout" asp-controller="Cart">
-                                <i class="fa-solid fa-cart-shopping"></i>
-                            </a>
+                        <div class="user_option ">
+                             @if (User.Identity.IsAuthenticated == true)
+                            {
+                                <a class="cart_link" asp-action="Checkout" asp-controller="Cart">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </a>
+                            }
                             <form class="form-inline">
                                 <button class="btn my-2 my-sm-0 nav_search-btn" type="submit">
                                     <i class="fa fa-search" aria-hidden="true"></i>
@@ -127,10 +130,6 @@
                             </form>
                             @if (User.Identity.IsAuthenticated == false)
                             {
-                                // this icon is a registration 
-                                <a asp-action="CustomerRegister" asp-controller="Account" class="user_link">
-                                    <i class="fa fa-user" aria-hidden="true"></i>
-                                </a>
                                 <a asp-action="Login" asp-controller="Account" class="order_online"> LogIn  </a>
                             }
                             else 
