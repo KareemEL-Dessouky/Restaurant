@@ -5,17 +5,35 @@
     ViewData["Title"] = "Edit Category";
 }
 
-<h1>Edit Category</h1>
+<style>
+    .container-cat-edit {
+        width: 60%;
+        margin: 100px auto;
+        margin-left: 2rem;
+        margin-top: 3rem;
+        background-color: rgba(0, 0, 0, 0.5);
+        flex-basis: 25%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 100px auto;
+        padding: 20px;
+        color: #fff;
+    }
+</style>
 
+<div class="container-cat-edit">
+    <h1>Edit Category</h1>
 
-<h1>Edit Category</h1>
+    <form asp-action="Edit" asp-controller="ProductCategories" method="post">
+        <input type="hidden" asp-for="Id" />
+        <div class="form-group">
+            <label asp-for="Name"></label>
+            <input asp-for="Name" value="@Model.Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+</div>
 
-<form asp-action="Edit" asp-controller="ProductCategories" method="post">
-    <input type="hidden" asp-for="Id" />
-    <div class="form-group">
-        <label asp-for="Name"></label>
-        <input asp-for="Name" value="@Model.Name" class="form-control" />
-        <span asp-validation-for="Name" class="text-danger"></span>
-    </div>
-    <button type="submit" class="btn btn-primary">Save</button>
-</form>

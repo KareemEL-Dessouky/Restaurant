@@ -27,7 +27,6 @@ namespace Restaurant.Controllers
         private readonly IMapper _mapper;
         private readonly IHttpContextAccessor session;
 
-        //List<Product> ShoppingCartItems = new List<Product>();
         List<CartItemViewModel> ShoppingCartItems = new List<CartItemViewModel>();
 
         public HomeController(IGenericRepository<Product> product, IGenericRepository<OrderItems> orderItems, IMapper mapper, IHttpContextAccessor session)
@@ -56,6 +55,12 @@ namespace Restaurant.Controllers
         public IActionResult AddToCart(int id)
         {
             var AddedProduct = _product.GetByID(id);
+
+            if (AddedProduct == null)
+            {
+                return RedirectToAction("Index");
+            }
+
             var mappedProduct = _mapper.Map<CartItemViewModel>(AddedProduct);
 
             HttpContext.Session.Set<CartItemViewModel>("item", mappedProduct);
@@ -65,8 +70,8 @@ namespace Restaurant.Controllers
 
         public IActionResult Privacy()
         {
-            var item = HttpContext.Session.Get<CartItemViewModel>("item");
-            return View(item);
+            //var item = HttpContext.Session.Get<CartItemViewModel>("item");
+            return View();
         }
 
         //[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
