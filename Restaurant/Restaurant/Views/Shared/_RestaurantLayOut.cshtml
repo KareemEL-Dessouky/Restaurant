@@ -53,7 +53,7 @@
         <header class="header_section">
             <div class="container">
                 <nav class="navbar navbar-expand-lg custom_nav-container">
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" asp-action="Index" asp-controller="Home">
                         <span class="d-flex">
                             <img src="./images/infint.png" alt="" style="width: 100px" />
                             <p>Infinity</p>
@@ -76,18 +76,23 @@
                                 <a class="nav-link" asp-action="Index" asp-controller="Home">Menu
                                     <span class="sr-only">(current)</span></a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" asp-action="Index" asp-controller="Products">Categores</a>
+                            <li class="nav-item ">
+                                <a class="nav-link" asp-action="Checkout" asp-controller="Cart">
+                                    CheckOut
+                                </a>
                             </li>
-@*                            <li class="nav-item">
-                                <a class="nav-link" href="/about.html">About</a>
-                            </li>*@
+                            <li class="nav-item">
+                                <a class="nav-link" asp-action="Index" asp-controller="Products">Products</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-action="Index" asp-controller="ProductCategories">Categories</a>
+                            </li>
 
                             @if (User.Identity.IsAuthenticated == false)
                             {
                                 // this icon is a registration 
                                 <li class="nav-item">
-                                    <div class="dropdown show">
+                                    <div class="dropdown show bg-success" >
                                         <a class="nav-link dropdown-toggle" role="button"  id="dropdownMenuLink" data-toggle="dropdown" 
                                         aria-haspopup="true" aria-expanded="false">
                                             Register as
