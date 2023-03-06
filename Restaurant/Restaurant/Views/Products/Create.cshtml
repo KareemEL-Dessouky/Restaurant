@@ -14,9 +14,8 @@
         padding-left: 2rem;
     }
 
-    form {
-        margin-left: 2rem;
-        margin-top: 3rem;
+    .form-create-product {
+   
         background-color: rgba(0, 0, 0, 0.5);
         flex-basis: 25%;
         display: flex;
@@ -25,6 +24,7 @@
         align-items: center;
         width: 55%;
         padding: 2rem;
+        margin: 100px auto;
     }
 
     .form-group {
@@ -42,9 +42,9 @@
     }
 </style>
 
-<h1>Create New Product</h1>
 
-<form asp-action="Create" method="post" enctype="multipart/form-data">
+<form asp-action="Create" method="post" enctype="multipart/form-data" class="form-create-product">
+<h1>Create New Product</h1>
     <div class="form-group">
         <label asp-for="Title" class=""></label>
         <input asp-for="Title" class="form-control" />

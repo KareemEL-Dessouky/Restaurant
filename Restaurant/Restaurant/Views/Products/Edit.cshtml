@@ -10,9 +10,8 @@
         padding-left: 1rem;
     }
 
-    form {
-        margin-left: 2rem;
-        margin-top: 3rem;
+    .form-edit-product {
+margin:100px auto;
         background-color: rgba(0, 0, 0, 0.5);
         flex-basis: 25%;
         display: flex;
@@ -38,9 +37,9 @@
     }
 </style>
 
-<h2>Edit Product</h2>
 
-<form asp-action="Edit" asp-controller="Products" method="post" enctype="multipart/form-data">
+<form asp-action="Edit" asp-controller="Products" method="post" enctype="multipart/form-data" class="form-edit-product">
+<h2>Edit Product</h2>
 
     @*   <input type="hidden" asp-for="" />*@
 

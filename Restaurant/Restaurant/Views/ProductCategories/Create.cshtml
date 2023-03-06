@@ -3,16 +3,37 @@
     ViewData["Title"] = "Categories";
 }
 
-<h2>Create Category</h2>
+<style>
+    .container-cat{
+        width: 60%;
+        margin: 100px auto;
+        margin-left: 2rem;
+        margin-top: 3rem;
+        background-color: rgba(0, 0, 0, 0.5);
+        flex-basis: 25%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 100px auto;
+        padding: 20px;
+        color: #fff;
+    }
+</style>
 
-<form asp-action="Create">
-    <div class="form-group">
-        <label asp-for="Name" class="control-label"></label>
-        <input asp-for="Name" class="form-control" />
-        <span asp-validation-for="Name" class="text-danger"></span>
-    </div>
-    <div class="form-group mt-3">
-        <button type="submit" class="btn btn-primary">Create</button>
-    </div>
-</form>
+<div class="container-cat">
+    <h2>Create Category</h2>
 
+    <form asp-action="Create">
+        <div class="form-group">
+            @*<label asp-for="Name" class="control-label"></label>*@
+            <input asp-for="Name" class="form-control" placeholder="Name" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="form-group mt-3">
+            <button type="submit" class="btn btn-primary">Create</button>
+        </div>
+    </form>
+
+
+</div>
