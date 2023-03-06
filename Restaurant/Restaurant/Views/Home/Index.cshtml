@@ -10,11 +10,11 @@
     .container-for-products {
                 display: flex;
         flex-wrap: wrap;
-            gap: 10px;
+            /*gap: 10px;
             padding-left: 50px;
             padding-right: 50px;
             gap: 10px;
-            margin: 1px auto;
+            margin: 1px auto;*/
     }
     
 
@@ -51,10 +51,10 @@
     }
 </style>
 <h2 style="margin-left:2em; color:#FA0;">Our Favorite Meals</h2>
-<div class="container-for-products" style="margin:2em 0;">
+<div class="container-for-products" style="justify-content:space-around">
     @foreach (var product in Model)
     {
-        <div class="card m-4" style="    width: 320px;">
+        <div class="card m-4" style="width: 320px;">
             <img src="@product.Image" class="card-img-top">
             <div class="card-body">
                 <h2 class="card-title">@product.Title</h2>
