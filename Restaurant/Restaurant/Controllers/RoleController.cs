@@ -32,7 +32,7 @@ namespace Restaurant.Controllers
 
                 if (result.Succeeded)
                 {
-                    return View();
+                    return RedirectToAction("Index", "Products");
                 }
                 else
                 {

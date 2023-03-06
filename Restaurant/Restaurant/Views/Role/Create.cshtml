@@ -4,29 +4,39 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<style>
+    .container-cat {
+        width: 60%;
+        margin: 15em auto;
+        background-color: rgba(0, 0, 0, 0.5);
+        flex-basis: 25%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        color: #fff;
+    }
+</style>
 
-<h4>RoleViewModel</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="All" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="RoleName" class="control-label"></label>
-                <input asp-for="RoleName" class="form-control" />
-                <span asp-validation-for="RoleName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Add Role" class="btn btn-warning" />
-            </div>
-        </form>
-    </div>
+
+<div class="container-cat p-5">
+    <h2 style="margin-bottom:1em;">Admin Roles</h2>
+
+    <form asp-action="Create">
+        <div class="form-group">
+            <input asp-for="RoleName" class="form-control" placeholder="What a Role?" />
+            <span asp-validation-for="RoleName" class="text-danger"></span>
+        </div>
+        <div class="form-group mt-5">
+            <button type="submit" class="btn btn-success" style="margin-right:3em;">Add Role</button>
+            <a asp-action="Index" asp-controller="Products" class="btn btn-dark">Back to Products</a>
+        </div>
+    </form>
+    
 </div>
 
-<div >
-    <a asp-action="Index" asp-controller="Products" class="btn btn-danger">Back to Products</a>
-</div>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
