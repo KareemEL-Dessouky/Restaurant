@@ -5,27 +5,74 @@
     ViewData["Title"] = "Create";
 }
 
+<style>
+    body {
+        color: white;
+    }
+
+    h1 {
+        padding-left: 2rem;
+    }
+
+    form {
+        margin-left: 2rem;
+        margin-top: 3rem;
+        background-color: rgba(0, 0, 0, 0.5);
+        flex-basis: 25%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 55%;
+        padding: 2rem;
+    }
+
+    .form-group {
+        margin-bottom: 3rem;
+        width: 100%;
+    }
+
+    label {
+        margin-bottom: .7rem;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+        margin-top: 2rem;
+    }
+</style>
+
 <h1>Create New Product</h1>
 
-<form asp-action="Create">
+<form asp-action="Create" method="post" enctype="multipart/form-data">
     <div class="form-group">
-        <label asp-for="Title" class="control-label"></label>
+        <label asp-for="Title" class=""></label>
         <input asp-for="Title" class="form-control" />
         <span asp-validation-for="Title" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="Price" class="control-label"></label>
+        <label asp-for="Price" class=""></label>
         <input asp-for="Price" class="form-control" />
         <span asp-validation-for="Price" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="CategoryID" class="control-label"></label>
+        <label asp-for="CategoryID" class=""></label>
         <select asp-for="CategoryID" asp-items="@ViewBag.CategoriesList" class="form-control"></select>
         <span asp-validation-for="CategoryID" class="text-danger"></span>
     </div>
- 
     <div class="form-group">
-        <input type="submit" value="Create" class="btn btn-primary" />
+        <label asp-for="Image" class=""></label>
+        <div class="">
+            @*accept only images, to be handled in the ctrl, too*@
+            <input asp-for="Image" type="file" class="form-control-file" accept="image/*" />
+
+            <label class="" for="Image">Choose file</label>
+        </div>
+        <span asp-validation-for="Image" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
     </div>
 </form>
+
 
