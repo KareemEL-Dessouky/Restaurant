@@ -12,26 +12,72 @@
     }
 </style>
 @*section to be movel in partial (products page or home)*@
-<div class="container">
+<style>
+    .container-list-food {
+
+        background-color: rgba(0, 0, 0, 0.5);
+        flex-basis: 25%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 55%;
+        margin: 100px auto;
+        padding: 20px;
+    }
+
+    .table {
+        color: #e9ecef;
+        border: 1px solid #fff;
+        text-align: center;
+        
+    }
+
+    h1 {
+        color: white
+    }
+
+    .action {
+        justify-content: space-around
+    }
+    a{
+        color:#fff;
+        text-decoration:none
+    }
+    li{
+        list-style:none
+    }
+</style>
+
+<div class="container-list-food">
     <h1>Categories</h1>
-    <div class="row">
-        <div class="col">
-            <ul class="ml-5">
-                @foreach (var category in Model)
-                {
-                    <li class="">
-                        <a asp-controller="Product" asp-action="Index" asp-route-id="@category.ID">@category.Name</a>
-                    </li>
-                    <a class="" href="@Url.Action(nameof(ProductCategoriesController.Edit), "categories", new { id = category.ID })">Edit Category</a>
-                    <form onclick="return confirm('Are you sure??');" method="post" asp-controller="categories" asp-action="Delete" asp-route-id="@category.ID">
-                        <input type="submit" value="Delete" class="" />
-                        @Html.AntiForgeryToken()
-                    </form>
-                }
-            </ul>
-        </div>
-    </div>
-
-    <a asp-controller="Categories" asp-action="Create" class="btn btn-primary">Add category</a>
-
+    <table class="table table-striped ">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Edit Category</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <li class="">
+                            <a asp-controller="Product" asp-action="Index" asp-route-id="@item.ID">@item.Name</a>
+                        </li>
+                    </td>
+                    <td><a class="btn btn-secondary" href="@Url.Action(nameof(ProductCategoriesController.Edit), "ProductCategories", new { id = item.ID })">Edit </a></td>
+                    <td>
+                        <form onclick="return confirm('Are you sure??');" method="post" asp-controller="ProductCategories" asp-action="Delete" asp-route-id="@item.ID">
+                            <input type="submit" value="Delete" class="btn btn-danger" />
+                            @Html.AntiForgeryToken()
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a asp-controller="ProductCategories" asp-action="Create" class="btn btn-success">Add category</a>
 </div>

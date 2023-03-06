@@ -16,9 +16,7 @@
             gap: 10px;
             margin: 1px auto;
     }
-    h1{
-        color:white
-    }
+    
 
     .add-cart{
         justify-content:space-around;
@@ -52,12 +50,11 @@
         border-radius: 5px;
     }
 </style>
-<h1 class="text-center">All Products</h1>
-
-<div class="container-for-products">
+<h2 style="margin-left:2em; color:#FA0;">Our Favorite Meals</h2>
+<div class="container-for-products" style="margin:2em 0;">
     @foreach (var product in Model)
     {
-        <div class="card" style="    width: 320px;">
+        <div class="card m-4" style="    width: 320px;">
             <img src="@product.Image" class="card-img-top">
             <div class="card-body">
                 <h2 class="card-title">@product.Title</h2>
@@ -68,7 +65,7 @@
 
                 @*<h3 class="card-text">ID: @Model.ID</h3>
             <h3 class="card-text">Address: @Model.Address</h3>*@
-                <h3 class="card-text">@product.Price.ToString("c2")</h3>
+                <h3 class="card-text" style="color:forestgreen;">@product.Price.ToString("c2")</h3>
             </div>
             <div>
 
