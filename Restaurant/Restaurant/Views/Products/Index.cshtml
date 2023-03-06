@@ -23,12 +23,14 @@
 
     .table {
         color: #e9ecef;
-        border: 1px solid #fff;
-        text-align: center;
+/*        border: 1px solid #fff;
+*/        text-align: center;
+          font-size:1em;
     }
 
     h1 {
-        color: white
+        color:chocolate;
+        margin-bottom:0.7em;
     }
 
     .action {
@@ -37,19 +39,17 @@
 </style>
 <div class="container-list-food">
     <h1>@ViewData["Title"]</h1>
-    <p>
-        <a asp-action="Create" class="btn btn-primary">Add New Product</a>
-    </p>
+    
     <table class="table table-striped ">
         <thead>
-            <tr>
+           @* <tr>
                 <th>ID</th>
                 <th>Image</th>
                 <th>Name</th>
                 <th>Price</th>
                 <th>Category</th>
                 <th>Action</th>
-            </tr>
+            </tr>*@
         </thead>
         <tbody>
             @foreach (var item in Model)
@@ -65,7 +65,8 @@
                     <td>@item.Price.ToString("C")</td>
                     <td>@item.Category</td>
                     <td class="d-flex gap-2 action">
-                        <a asp-controller="products" asp-action="Edit" asp-route-id="@item.ID" class="btn btn-primary">Edit</a>
+                        <i class="fa-solid fa-trash-can-slash"></i>
+                        <a asp-controller="products" asp-action="Edit" asp-route-id="@item.ID" class="btn btn-secondary">Edit</a>
                         <form onclick="return confirm('Are you sure??');" method="post" asp-controller="products" asp-action="Delete" asp-route-id="@item.ID">
                             <input type="submit" value="Delete" class="btn btn-danger" />
                             @Html.AntiForgeryToken()
@@ -75,4 +76,10 @@
             }
         </tbody>
     </table>
+
+    <div style="margin:0 25%;">
+        <a asp-action="Create" class="btn btn-success p-2" style="width:10em; font-size:1em; border-radius:0.7em;">Add Product</a>
+    </div>
 </div>
+
+
