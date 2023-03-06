@@ -59,8 +59,14 @@ namespace Restaurant.Controllers
         [HttpGet]
         public IActionResult Checkout()
         {
-            // var userID = _context.Users.Where(user => user.UserName == login.userName).select(user => user.UserID);
+            // get and deserialize data json
+            var cartItem = HttpContext.Session.Get<CartItemViewModel>("CartItem");
 
+            return View(cartItem);
+        }
+
+        public IActionResult PlaceOrder()
+        {
             var user = _userManager.GetUserAsync(User);
             var mockUserId = 1;
 
@@ -81,25 +87,25 @@ namespace Restaurant.Controllers
             // create order item accordingly
             var orderItem = new OrderItems
             {
-                Order = customerOrder,
+                OrderID = customerOrder.ID,
                 ProductID = cartItem.Id,
                 Quantity = cartItem.Quantity,
                 Price = cartItem.Price
             };
 
             // check if sufficient quantity avaiable or possible null
-            if (orderItem == null || orderItem.Quantity == 0 || cartItem.Quantity > orderItem.Quantity)
+            if (orderItem == null || orderItem.Quantity == 0  /*||cartItem.Quantity > orderItem.Quantity*/)
             {
                 ViewBag.NotAvailable = "There is not enough quantity in the store at the moment, try another time!";
                 return View();
             }
 
-            // decrease the items quantity according to user choice
-            orderItem.Quantity -= cartItem.Quantity;
+
+            _orderItems.Insert(orderItem);
+
             _context.SaveChanges();
 
-            var mappedProduct = _mapper.Map<CartItemViewModel>(cartItem);
-            return View(mappedProduct);
+            return View();
         }
     }
 }
