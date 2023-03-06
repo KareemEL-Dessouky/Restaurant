@@ -2,7 +2,7 @@
 @model CartItemViewModel
 
 @{
-    ViewData["Title"] = "Checkout Success!";
+    ViewData["Title"] = "Checkout Information!";
 }
 
 <style>
@@ -44,6 +44,13 @@
     <h1>@ViewData["Title"]</h1>
     <hr />
 
+@if (Model == null)
+{
+    <div class="alert alert-danger">@ViewBag.NotAvailable</div>
+}
+
+else {
+
 <div class="checkout-container">
     <div class="row">
         <div class="col-md-12">
@@ -71,5 +78,9 @@
 </div>
 
 <h2>Happy Purchase!</h2>
+}
 
+<div class="text-lg-center">
+    <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Take Me Back</a>
+</div>
 
