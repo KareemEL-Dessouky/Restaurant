@@ -16,42 +16,48 @@ public static class AppSeedDataExtension
                 ID = 1,
                 CategoryID = 1,
                 Title = "Product 1",
-                Price = 20
+                Price = 20,
+                Image = "https://images.unsplash.com/photo-1615719413546-198b25453f85?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=736&q=80"
             },
             new Product
             {
                 ID = 2,
                 CategoryID = 1,
                 Title = "Product 2",
-                Price = 50
+                Price = 50,
+                Image = "https://images.unsplash.com/photo-1619221882220-947b3d3c8861?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
             },
             new Product
             {
                 ID = 3,
                 CategoryID = 2,
                 Title = "Product 3",
-                Price = 88
+                Price = 88,
+                Image = "https://images.unsplash.com/photo-1625539990527-914cf510191d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
             },
             new Product
             {
                 ID = 4,
                 CategoryID = 2,
                 Title = "Product 4",
-                Price = 32
+                Price = 32,
+                Image = "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=781&q=80"
             },
             new Product
             {
                 ID = 5,
                 CategoryID = 3,
                 Title = "Product 5",
-                Price = 59
+                Price = 59,
+                Image = ""
             },
             new Product
             {
                 ID = 6,
                 CategoryID = 3,
                 Title = "Product 6",
-                Price = 200
+                Price = 200,
+                Image = "https://images.unsplash.com/photo-1530554764233-e79e16c91d08?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
             });
 
         modelBuilder.Entity<Category>().HasData(
