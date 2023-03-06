@@ -67,9 +67,11 @@
                     <td>@item.Price.ToString("C")</td>
                     <td>@item.Category</td>
                     <td class="d-flex gap-2 action">
-                        <i class="fa-solid fa-trash-can-slash"></i>
                         <a asp-controller="products" asp-action="Edit" asp-route-id="@item.ID" class="btn btn-secondary">Edit</a>
-                        <form onclick="return confirm('Are you sure??');" method="post" asp-controller="products" asp-action="Delete" asp-route-id="@item.ID">
+                    </td>
+                    <td>
+                        <form onclick="return confirm('Are you sure??');" method="post" asp-controller="products" asp-action="Delete"
+                          asp-route-id="@item.ID">
                             <input type="submit" value="Delete" class="btn btn-danger" />
                             @Html.AntiForgeryToken()
                         </form>
