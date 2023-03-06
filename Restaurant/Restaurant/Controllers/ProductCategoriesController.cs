@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 using Restaurant.Models;
@@ -8,6 +8,7 @@ using Restaurant.ViewModels.CategoryViewModel;
 
 namespace Restaurant.Controllers;
 
+[Authorize(Roles ="Admin")]
 public class ProductCategoriesController : Controller
 {
     private readonly IGenericRepository<Category> _category;

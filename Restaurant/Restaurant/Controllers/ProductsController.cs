@@ -10,6 +10,7 @@ using Restaurant.ViewModels.ProductViewModel;
 
 namespace Restaurant.Controllers
 {
+    [Authorize(Roles ="Admin")]
     public class ProductsController : Controller
     {
         private readonly IGenericRepository<Category> _category;
