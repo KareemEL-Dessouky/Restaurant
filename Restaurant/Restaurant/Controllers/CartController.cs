@@ -56,7 +56,7 @@ namespace Restaurant.Controllers
 
         // GET: /Cart/Checkout
         [HttpGet]
-        public IActionResult Checkout(CartItemViewModel cartItemViewModel)
+        public IActionResult Checkout()
         {
             // get and deserialize data json
             var cartItem = HttpContext.Session.Get<CartItemViewModel>("CartItem");
