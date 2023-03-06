@@ -159,42 +159,42 @@ public static class AppSeedDataExtension
                 OrderID = 1,
                 ProductID = 1,
                 Price = 42,
-                Quantity = 2
+                Quantity = 20
             },
             new OrderItems
             {
                 OrderID = 2,
                 ProductID = 2,
                 Price = 23,
-                Quantity = 1
+                Quantity = 10
             },
             new OrderItems
             {
                 OrderID = 3,
                 ProductID = 1,
                 Price = 44,
-                Quantity = 5
+                Quantity = 58
             },
             new OrderItems
             {
                 OrderID = 4,
                 ProductID = 3,
                 Price = 10,
-                Quantity = 2
+                Quantity = 200
             },
             new OrderItems
             {
                 OrderID = 5,
                 ProductID = 2,
                 Price = 50,
-                Quantity = 4
+                Quantity = 400
             },
             new OrderItems
             {
                 OrderID = 6,
                 ProductID = 3,
                 Price = 88,
-                Quantity = 3
+                Quantity = 300
             });
     }
 }
