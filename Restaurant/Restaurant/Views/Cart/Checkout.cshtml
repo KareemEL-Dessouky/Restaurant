@@ -16,9 +16,10 @@
 
     h2 {
         margin-top: 1rem;
-        padding-left: 2rem;
+        padding-left: 1.5rem;
         color: green;
         font-weight: 700;
+        
     }
 
     .checkout-container {
@@ -33,7 +34,7 @@
         align-items: center;
         width: 55%;
         padding: 2rem;
-        margin: 100px auto;
+        margin: 3em 20em;
     }
 
     thead, tr {
@@ -42,21 +43,21 @@
 
 </style>
 
-    <h1>@ViewData["Title"]</h1>
-    <hr />
+    
 
 @if (Model == null)
 {
-    <div class="alert alert-danger">@ViewBag.NotAvailable</div>
+    <div class="alert alert-danger " style="width:50%; margin:10em 22.2em; margin-bottom:4em;">@ViewBag.NotAvailable</div>
 }
 
 else {
+    <h2 style="margin-top:3em; margin-left:2em;">Happy Purchase!</h2>
 
-<div class="checkout-container">
+<div class="checkout-container ">
     <div class="row">
         <div class="col-md-12">
-            <h2>Your Cart Items</h2>
-            <table class="table table-bordered">
+                <h2 style="color:darkgoldenrod; margin-left:1.5em; margin-bottom:1.1em;">Your Cart Items</h2>
+            <table class="table table-striped table-bordered" >
                 <thead>
                     <tr>
                         <th>Product Name</th>
@@ -78,15 +79,18 @@ else {
     </div>
 </div>
 
-<h2>Happy Purchase!</h2>
+    <div class="text-lg-center " style="display:inline;">
+        <a asp-controller="Cart" asp-action="PlaceOrder" class="btn btn-success"
+       style="margin-top:2em; width:15%">Place Order</a>
+</div>     
+
+
 }
-
-<div class="text-lg-center">
-    <a asp-controller="Cart" asp-action="PlaceOrder" class="btn btn-primary">Place Order</a>
+<div class="text-lg-center m-2" style="display:inline;">
+    <a asp-controller="Home" asp-action="Index" class="btn btn-dark" style="margin-bottom:2em; width:15%">Take Me Back</a>
 </div>
 
 
-<div class="text-lg-center">
-    <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Take Me Back</a>
-</div>
+
+
 

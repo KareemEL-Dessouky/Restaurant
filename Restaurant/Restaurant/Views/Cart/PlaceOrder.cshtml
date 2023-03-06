@@ -3,7 +3,30 @@
     ViewData["Title"] = "PlaceOrder";
 }
 
-<h1>Your Order is Placed Successfully!</h1>
 
-<h1>We Can't Wait To See You Again!'</h1>
+<style>
+    .container-cat {
+        width: 60%;
+        margin: 14em auto;
+        background-color: rgba(0, 0, 0, 0.5);
+        flex-basis: 25%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        color: #fff;
+    }
+</style>
 
+<div class="container-cat p-5">
+    <h3 class="text-warning" style="margin-bottom:1em;">We Can't Wait To See You Again!'</h3>
+
+    <form asp-action="Create">
+        <div class="form-group">
+            <h2 class="text-break">Your Order is Placed Successfully!</h2>
+        </div>
+        
+    </form>
+
+</div>
