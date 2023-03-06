@@ -66,12 +66,13 @@ namespace Restaurant.Controllers
 
             var order = _context.OrderItems.FirstOrDefault(o => o.ProductID == cartItem.Id);
 
-            // check if sufficient quantity avaiable
-            if (cartItem.Quantity > order.Quantity)
+            // check if sufficient quantity avaiable or possible null
+            if (order == null || order.Quantity == 0 || cartItem.Quantity > order.Quantity)
             {
                 ViewBag.NotAvailable = "There is not enough quantity in the store at the moment, try another time!";
                 return View();
             }
+
             // decrease the items quantity according to user choice
             order.Quantity -= cartItem.Quantity;
 
