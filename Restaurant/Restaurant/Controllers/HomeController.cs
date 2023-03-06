@@ -9,6 +9,7 @@ using Restaurant.ViewModels.ProductViewModel;
 using Microsoft.AspNetCore.Http;
 using System.Diagnostics;
 using System.Collections.Generic;
+using Restaurant.Helper;
 
 namespace Restaurant.Controllers
 {
@@ -57,19 +58,15 @@ namespace Restaurant.Controllers
             var AddedProduct = _product.GetByID(id);
             var mappedProduct = _mapper.Map<CartItemViewModel>(AddedProduct);
 
-            string storedProduct = JsonConvert.SerializeObject(mappedProduct);
-
-            //HttpContext.Session.SetString("storedProduct", storedProduct);
-
-
-            ShoppingCartItems.Add(mappedProduct);
+            HttpContext.Session.Set<CartItemViewModel>("item", mappedProduct);
 
             return RedirectToAction("Index");
         }
 
         public IActionResult Privacy()
         {
-            return View();
+            var item = HttpContext.Session.Get<CartItemViewModel>("item");
+            return View(item);
         }
 
         //[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
