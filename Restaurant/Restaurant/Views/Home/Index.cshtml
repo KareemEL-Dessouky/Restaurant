@@ -8,13 +8,13 @@
 
 <style>
     .container-for-products {
-            display: flex;
-    flex-wrap: wrap;
-        gap: 10px;
-        padding-left: 50px;
-        padding-right: 50px;
-        gap: 10px;
-        margin: 1px auto;
+                display: flex;
+        flex-wrap: wrap;
+            gap: 10px;
+            padding-left: 50px;
+            padding-right: 50px;
+            gap: 10px;
+            margin: 1px auto;
     }
     h1{
         color:white
@@ -25,13 +25,16 @@
         align-items:center;
         margin-bottom: 10px;
     }
+    .card-img-top{
+        height: 270px;
+    }
 
     .add-cart input{
-            width: 100px;
-        }
+        width: 100px;
+    }
 
-        .add-cart putton {
-        }
+    .add-cart putton {
+    }
 
     .add-cart i:hover{
             color: #ffbe33
@@ -40,13 +43,13 @@
         padding:3px
     }
     h3{
-font-size: 22px;
-    font-weight: bold;
-    color: #e91e63;
-    background: #eee;
-    padding: 2px;
-    width: 80px;
-    border-radius: 5px;
+        font-size: 22px;
+        font-weight: bold;
+        color: #e91e63;
+        background: #eee;
+        padding: 2px;
+        width: fit-content;
+        border-radius: 5px;
     }
 </style>
 <h1 class="text-center">All Products</h1>
@@ -55,7 +58,7 @@ font-size: 22px;
     @foreach (var product in Model)
     {
         <div class="card" style="    width: 320px;">
-            <img src="/images/burger056.jpg" class="card-img-top">
+            <img src="@product.Image" class="card-img-top">
             <div class="card-body">
                 <h2 class="card-title">@product.Title</h2>
                 @*<h3 class="card-text">@product.Quantity</h3>
