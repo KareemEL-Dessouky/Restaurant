@@ -61,7 +61,7 @@ public class ProductCategoriesController : Controller
             context.Categories.Add(newCategory);
             context.SaveChanges();
 
-            return RedirectToAction("Index", "Categories");
+            return RedirectToAction("Index", "ProductCategories");
         }
         return View();
     }
