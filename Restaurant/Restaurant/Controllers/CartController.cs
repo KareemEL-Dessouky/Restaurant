@@ -10,6 +10,7 @@ using Restaurant.ViewModels.CartViewModel;
 
 namespace Restaurant.Controllers
 {
+    [Authorize]
     public class CartController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;
@@ -34,7 +35,6 @@ namespace Restaurant.Controllers
 
         // GET: /Cart/AddtoCart
         // get related cart info for specific customer
-        [Authorize]
         public IActionResult AddToCart(int id, int quantity)
         {
             // check if user authenticated or not
