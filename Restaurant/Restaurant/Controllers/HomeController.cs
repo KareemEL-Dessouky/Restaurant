@@ -64,6 +64,25 @@ namespace Restaurant.Controllers
             return RedirectToAction("Index");
         }
 
+
+        // Search on a Product by title
+        public IActionResult SearchProduct(string Seacrchname)
+        {
+             
+            var product =
+                (from prod in _product.GetAll()
+                 where prod.Title.Contains(Seacrchname)
+                 select prod).ToList();
+
+            if (product != null)
+            {
+                return View(product);
+            }
+
+            return RedirectToAction("Index");
+        }
+
+
         public IActionResult Privacy()
         {
             //var item = HttpContext.Session.Get<CartItemViewModel>("item");

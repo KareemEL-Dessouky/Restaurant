@@ -123,11 +123,16 @@
                                     <i class="fa-solid fa-cart-shopping"></i>
                                 </a>
                             }
-                            <form class="form-inline">
+                            
+                            @using (Html.BeginForm("SearchProduct", "Home", FormMethod.Get))
+                            {
+                                @Html.TextBox("Seacrchname", null, new { @style="width: 78%;"})
                                 <button class="btn my-2 my-sm-0 nav_search-btn" type="submit">
                                     <i class="fa fa-search" aria-hidden="true"></i>
                                 </button>
-                            </form>
+                            }
+                                
+                            
                             @if (User.Identity.IsAuthenticated == false)
                             {
                                 <a asp-action="Login" asp-controller="Account" class="order_online"> LogIn  </a>
