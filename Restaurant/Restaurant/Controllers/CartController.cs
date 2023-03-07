@@ -17,16 +17,16 @@ namespace Restaurant.Controllers
         private readonly IGenericRepository<OrderItems> _orderItems;
         private readonly IGenericRepository<Customer> _customer;
         private readonly IGenericRepository<Order> _customerOrder;
-        private readonly RestaurantContext _context;
+        //private readonly RestaurantContext _context;
         private readonly IMapper _mapper;
-        public CartController(IGenericRepository<Product> productRepository, IGenericRepository<OrderItems> orderItemsRepository, IGenericRepository<Customer> customerRepository, IGenericRepository<Order> orderRepository, IMapper mapper, RestaurantContext context, UserManager<ApplicationUser> userManager)
+        public CartController(IGenericRepository<Product> productRepository, IGenericRepository<OrderItems> orderItemsRepository, IGenericRepository<Customer> customerRepository, IGenericRepository<Order> orderRepository, IMapper mapper, /*RestaurantContext context,*/ UserManager<ApplicationUser> userManager)
         {
             _product = productRepository;
             _orderItems = orderItemsRepository;
             _customer = customerRepository;
             _customerOrder = orderRepository;
             _mapper = mapper;
-            _context = context;
+            //_context = context;
             _userManager = userManager;
         }
 
@@ -109,7 +109,7 @@ namespace Restaurant.Controllers
 
             _orderItems.Insert(orderItem);
 
-            _context.SaveChanges();
+            //_context.SaveChanges();
 
             return View();
         }
