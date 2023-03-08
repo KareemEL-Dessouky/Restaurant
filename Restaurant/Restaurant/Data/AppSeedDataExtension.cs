@@ -154,7 +154,7 @@ public static class AppSeedDataExtension
             new Order
             {
                 ID = 1,
-                TotalPrice = 800,
+                TotalPrice = 20,
                 PlacedAt = new DateTime(2020, 4, 1),
                 CustomerID = 1,
                 Notes = "some notes about the order"
@@ -162,42 +162,9 @@ public static class AppSeedDataExtension
             new Order
             {
                 ID = 2,
-                TotalPrice = 500,
+                TotalPrice = 20,
                 PlacedAt = new DateTime(2023, 1, 31),
-                CustomerID = 2,
-                Notes = "the order needs some salts"
-            },
-            new Order
-            {
-                ID = 3,
-                TotalPrice = 500,
-                PlacedAt = new DateTime(2023, 1, 31),
-                CustomerID = 2,
-                Notes = "the order needs some salts"
-            },
-            new Order
-            {
-                ID = 4,
-                TotalPrice = 500,
-                PlacedAt = new DateTime(2023, 1, 31),
-                CustomerID = 2,
-                Notes = "the order needs some salts"
-            },
-            new Order
-            {
-                ID = 5,
-                TotalPrice = 500,
-                PlacedAt = new DateTime(2023, 1, 31),
-                CustomerID = 2,
-                Notes = "the order needs some salts"
-            },
-
-            new Order
-            {
-                ID = 6,
-                TotalPrice = 500,
-                PlacedAt = new DateTime(2023, 1, 31),
-                CustomerID = 2,
+                CustomerID = 1,
                 Notes = "the order needs some salts"
             });
 
@@ -206,43 +173,15 @@ public static class AppSeedDataExtension
             {
                 OrderID = 1,
                 ProductID = 1,
-                Price = 42,
-                Quantity = 20
+                Price = 10,
+                Quantity = 2
             },
             new OrderItems
             {
                 OrderID = 2,
                 ProductID = 2,
-                Price = 23,
-                Quantity = 10
-            },
-            new OrderItems
-            {
-                OrderID = 3,
-                ProductID = 1,
-                Price = 44,
-                Quantity = 58
-            },
-            new OrderItems
-            {
-                OrderID = 4,
-                ProductID = 3,
-                Price = 10,
-                Quantity = 200
-            },
-            new OrderItems
-            {
-                OrderID = 5,
-                ProductID = 2,
-                Price = 50,
-                Quantity = 400
-            },
-            new OrderItems
-            {
-                OrderID = 6,
-                ProductID = 3,
-                Price = 88,
-                Quantity = 300
+                Price = 20,
+                Quantity = 1
             });
     }
 }
