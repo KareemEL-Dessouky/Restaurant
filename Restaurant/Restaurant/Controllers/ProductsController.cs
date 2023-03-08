@@ -21,7 +21,7 @@ namespace Restaurant.Controllers
         private IMapper _mapper;
 
         // upload img
-        private readonly FileUploader _fileUpload;
+        //private readonly FileUploader _fileUpload;
         private readonly IWebHostEnvironment _webHostEnvironment;
         public ProductsController(IGenericRepository<Product> product, IMapper mapper, IGenericRepository<Category> category, /*FileUploader fileUpload,*/ IWebHostEnvironment webHostEnvironment, RestaurantContext context)
         {
@@ -200,5 +200,7 @@ namespace Restaurant.Controllers
             }
 
         }
+
+        
     }
 }
