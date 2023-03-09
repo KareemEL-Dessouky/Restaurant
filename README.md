@@ -1,3 +1,3 @@
 # Restaurant
-Restaurant is an ASP .Net MVC Web Application.
-It targets those who want to have an online store with core features and adminstration features like having the ability of creating, reading, updating and deleting operations.
+The Restaurant project is an ASP .Net MVC web application designed to provide a comprehensive online store solution with core features and robust administrative capabilities. The application allows for seamless creation, reading, updating, and deletion operations, making it an ideal choice for businesses seeking a powerful and scalable online platform. With its intuitive interface and robust functionality, Restaurant is an excellent choice for businesses seeking to establish a professional and reliable online presence.
+
